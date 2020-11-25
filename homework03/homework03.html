@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lesson 3 HOMEWORK</title>
+</head>
+<body>
+    <header>
+        <p>This is solution for homework task #3</p>
+        <p>Поля Имя, Фамилия и Email обязательны. Поле Телефон обязательно и вводится только в указанном формате.</p>
+    </header>
+    <main>
+        <table border="1" cellpadding="10" bgcolor="#dbc6ab">
+            <tr>
+               <th>
+                   Оформление заказа
+               </th>
+            </tr>
+            <tr>
+               <th>
+                   <form action="#" method="get" name="homework3data">
+                      Ваше имя<br>
+                      <input type="text" name="first_name" placeholder="Введите имя" required><br><br>
+                      Ваша фамилия<br>
+                      <input type="text" name="sur_name" placeholder="Введите фамилию" required><br><br>
+                      Ваш email<br>
+                      <input type="email" name="email" placeholder="Введите email" required><br><br>
+                      Ваша дата рождения<br>
+                      <input type="date" name="dateofbirth" placeholder="ДД-мм-ГГГГ"><br><br>
+                      Ваш телефон<br>
+                      <input type="tel" name="telephone_no" placeholder="Введите телефон" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"><br>
+                      <small>Format: 123-456-7890</small><br><br>
+                      Выберите размер<br>
+                      <label><input type="radio" name="size" value="XS">XS</label><br>
+                      <label><input type="radio" name="size" value="S">S</label><br>
+                      <label><input type="radio" name="size" value="M" checked>M</label><br>
+                      <label><input type="radio" name="size" value="L">L</label><br>
+                      <br>
+                      Дополнительные опции<br>
+                      <label><input type="checkbox" name="options" value="delivery" checked>Доставка</label><br>
+                      <label><input type="checkbox" name="options" value="by_card">Оплата картой</label><br>
+                      <label><input type="checkbox" name="options" value="recall_me">Перезвоните мне</label><br>
+                      <br>
+                      Выберите цвет<br>
+                      <select name="color">
+                        <option value="red">Красный</option>
+                        <option value="blue">Синий</option>
+                        <option value="white">Белый</option>
+                        <option value="black" selected>Чёрный</option>
+                      </select>
+                      <br><br>
+                      <button type="submit">Отправить</button>
+                   </form>
+               </th>
+            </tr>
+            <tr>
+               <th>
+                   <p>После заполнения всех данных, не забудьте нажать кнопку "Отправить"</p>                   
+               </th>
+            </tr>
+        </table>
+    </main>
+    <footer>
+        <p>Thank you for reading!</p>
+        <p>(C) <a href="mailto:evgenyshevchenko@ukr.net">ES</a> Front-end course, 2020</p>
+    </footer>
+</body>
+</html>
