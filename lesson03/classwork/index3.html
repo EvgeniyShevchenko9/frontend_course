@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Forms</title>
+</head>
+<style>
+    input{
+        margin-bottom: 10px;
+    }
+</style>
+<body>
+    <form action="#" method="get" name="Lesson 3 form">
+        <input type="text" name="first_name" placeholder="Введите имя" minlength="3" required><br>
+        <input type="password" name="password" placeholder="Введите пароль"><br>
+        <input type="color" name="color" disabled><br>
+        <input type="date" name="date"><br>
+        <input type="email" name="email"><br>
+        <input type="number" name="number" min="0" max="10"><br>
+        <input type="range" value="range" min="0" max="10"><br>
+        <input type="tel" value="tel"><br>
+<!--        <input type="url" value="url"><br>-->
+        <textarea name="text" cols="30" rows="10" placeholder="Напишите о себе"></textarea><br>
+        
+        <div>
+            <h3>Выберите размер</h3>
+            <input type="checkbox" name="size" id="size" value="L">
+            <label for="red"> L</label>
+            
+            <label><input type="checkbox" name="size" value="XL"> XL</label>
+            
+            <br>
+            <label><input type="radio" name="color" value="blue"> Синий</label>
+            <label><input type="radio" name="color" value="red" checked> Красный</label>
+            <label><input type="radio" name="color" value="yellow"> Желтый</label>
+        </div>
+        
+        <input type="hidden" name="user_id" value="Evgeny">
+        <input type="hidden" name="location" value="Kyiv">
+        
+        <select name="day-of-week" multiple>
+            <option value="1">Mon</option>
+            <option value="2">Tue</option>
+            <option value="3">Wed</option>
+            <option value="4">Thu</option>
+            <option value="5" selected>Fri</option>
+            <option value="6">Sat</option>
+            <option value="7">Sun</option>
+        </select>
+        <br>
+        
+        <label>Выберите файл<input type="file" name="file" style="display: none"></label>
+        <br>
+        
+        <input type="submit" value="SUBMIT">
+        <button type="submit">Это <strong>супер</strong> кнопка</button>
+    </form>
+</body>
+</html>
