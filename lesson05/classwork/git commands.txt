@@ -1,0 +1,8 @@
+git checkout -b "task/xxxx"
+...
+git add .
+git commit -m "descr"
+git checkout master
+git merge task/xxxx
+(git pull получить чьи-то изменения)
+git push - и тут могут быть конфликты при мерже с версиями других разработчиков
