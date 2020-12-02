@@ -1,0 +1,25 @@
+* {
+    text-indent: 1em;
+    transition: all .1s ease-in;
+}
+
+h2 {
+    color: navy;
+    text-indent: 1.1em;
+}
+
+img {
+    border-style: outset;
+    margin: 0px 6px;
+    vertical-align: middle;
+}
+
+p {
+    line-height: 1.0;    
+}
+
+a:hover {
+    color: darkgreen;
+    font-size: 110%;
+    ;
+}

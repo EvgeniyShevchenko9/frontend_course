@@ -1,0 +1,179 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.menu{
+	list-style: none;
+	background: #08c;
+}
+
+.menu a{
+	text-decoration: none;
+	color: #fff;
+	border-bottom: 1px solid #fff;
+}
+
+.menu li:last-child a{
+	border-bottom: none;
+}
+
+.menu li:not(:first-child) a{
+	font-size: 28px;
+}
+ 
+.menu li{
+	margin-left: 40px;
+}
+
+.menu > li {
+	margin-left: 20px;
+}
+
+.first-item_menu + li a{
+	color: yellow;
+}
+.first-item_menu ~ li a{
+	font-size: 12px;
+}
+
+label{
+	display: block;
+	margin-top: 10px;
+}
+
+
+[class="paragraph"]{ 
+	color: orange;
+	font-size: 18px;
+	padding: 12px;
+}
+
+[class="paragraph"]:hover{ 
+	background: #000;
+	color: #fff;
+	cursor: wait;
+}
+
+/* .paragraph */
+[class~="paragraph"]{ 
+	text-decoration: line-through;
+}
+
+[class^="paragraph"]{
+	background-color: yellow;
+}
+
+[class$="paragraph"]{
+	background-color: red;
+}
+
+.links{
+	padding: 50px;
+}
+
+.links ul{
+	list-style: none;
+}
+
+.links a{
+	text-decoration: none;
+	color: #08c;
+	padding-left: 17px;
+	background-size: 12px;
+	background-repeat: no-repeat;
+	background-position: left center;
+}
+
+li a:first-letter{
+	font-size: 50px;
+}
+
+.links li:before{
+	content: "😎"
+}
+.links li:after{
+	content: "😂"
+}
+
+.links a:hover{
+	color: #049;
+}
+.links a:active{
+	color: #025;
+}
+.links a:visited{
+	color: #011
+}
+
+[href$=".pdf"]{
+	background-image: url('../images/pdf.png');
+}
+[href$=".doc"]{
+	background-image: url('https://icon-library.com/images/doc-icon-png/doc-icon-png-4.jpg');
+}
+[href$=".xls"]{
+	background-image: url('https://cdn3.iconfinder.com/data/icons/document-icons-2/30/647702-excel-512.png');
+}
+
+
+.form{
+	padding: 50px;
+}
+
+input[type="text"]{
+	width: 125px;
+	line-height: 1.5;
+	font-size: 12px;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	padding: 0 10px;
+}
+
+input[type="text"]:focus{
+	border: 1px solid #08c;
+	outline: none;
+}
+input[type="text"]:enabled{
+	background-color: #fff;
+}
+input[type="text"]:disabled{
+	background-color: #eee;
+}
+
+input[type="checkbox"]{
+	display: none;
+}
+
+input[type="checkbox"] + span {
+	display: inline-block;
+	width: 15px;
+	height: 15px;
+	border: 1px solid #ccc;
+	border-radius: 2px;
+	vertical-align: middle;
+	margin-bottom: 4px;
+}
+
+input[type="checkbox"]:checked + span {
+	background-image: url(https://images.vexels.com/media/users/3/157932/isolated/lists/951a617272553f49e75548e212ed947f-curved-check-mark-icon.png);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 12px;
+	border-color: #08c;
+}
+
+section:target{
+	background-color: #ccc;
+}
+
+p::selection{
+	color: yellow;
+	background-color: #08c;
+}
+
+.ESclass:focus{
+    border-color: red;
+    background-color: yellow;
+}
