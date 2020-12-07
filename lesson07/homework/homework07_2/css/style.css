@@ -1,0 +1,107 @@
+*{
+	transition: all .1s ease-in;
+    font-family: Garamond, serif;
+    margin: 0;
+	padding: 0;
+    -moz-box-sizing: border-box; /* Для Firefox */
+    -webkit-box-sizing: border-box; /* Для Safari и Chrome */
+    box-sizing: border-box; /* Для IE и Opera */
+}
+
+.weather_container {
+    display: block;
+	background: #3399CC;
+    width: 100%;
+    padding: 0px 140px 40px;
+    color: white;
+    font-size: 28px;
+    border-style: solid;
+    border-width: 16px;
+    border-color: #2B81AC;
+    min-width: 960px;
+    height: auto;
+}
+
+.weather_container p {
+    padding: 16px 0;
+}
+
+.cities {
+    font-size: 0px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: white;
+}
+
+li {
+    list-style-type: none; /* Убираем маркеры */
+    font-size: 20px;
+    display: inline-block;
+    border-style: solid;
+    border-width: 2px;
+    border-color: white;
+    text-align: center;
+    width: 25%;
+    min-width: 120px;
+    padding: 15px 5px;
+}
+
+li:hover {
+    opacity: 0.6;
+    cursor: pointer;
+}
+
+.cities p {
+    padding: 5px 0px;
+}
+
+.lisbon {
+    background: #3399CC;
+    width: 50%;
+}
+
+.paris {
+    background: #33CCCC;
+    }
+
+.belgrade {
+    background: #996699;
+}
+
+.moscow {
+    background: #C24747;
+}
+
+.telaviv {
+    background: #E2674A;
+}
+
+.cair {
+    background: #FFCC66;
+}
+
+.newyork {
+    background: #99CC99;
+}
+
+.newdelhi {
+    background: #669999;
+}
+
+.sanfrancisko {
+    background: #CC6699;
+    width: 50%;
+}
+
+.tokyo {
+    background: #339966;
+}
+
+.sydney {
+    background: #666699;
+    width: 100%;
+}
+
+.goodwish {
+    font-size: 18px;
+}
