@@ -1,0 +1,155 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body{
+	padding: 10px
+}
+
+.box-container{
+	display: flex;
+	justify-content: space-between;
+	border: 2px solid red;
+	max-width: 1800px;
+	margin: 0 auto;
+	align-items: flex-start;
+/*	flex-direction: row;*/
+/*	flex-wrap: wrap;*/
+/*	flex-flow: row wrap;*/
+	align-content: space-around;
+	min-height: 100vh;
+}
+
+.box{
+	min-height: 200px;
+	background: #08c;
+	border-radius: 5px;
+	border: 1px solid yellow;
+	text-align: center;
+	line-height: 200px;
+	color: #fff;
+	font-size: 60px;
+	flex-grow: 1;
+}
+
+
+.box:nth-child(3){
+	height: 500px;
+	font-size: 100px;
+	order: -1;
+}
+
+/*
+.container{
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	width: 1830px;
+	max-width: 100%;
+	margin: 50px auto;
+	justify-content: space-between;
+}
+*/
+
+.news__item{
+	flex: 0 0 50%;
+	padding: 0 15px;
+/*
+	flex: 1;
+	max-width: 49%;
+*/
+}
+
+.news-content{
+	background-color: lightgreen;
+	min-height: 300px;
+}
+
+.gallery__item{
+	flex: 0 0 33.3%;
+	padding: 0 15px;
+/*
+	flex: 1;
+	max-width: 49%;
+*/
+}
+
+.gallery-content{
+	background-color: lightskyblue;
+	min-height: 500px;
+}
+
+footer{
+	background-color: lavender;
+	min-height: 100vh;
+	padding: 15px;
+	display: flex;
+	-ms-align-items: center;
+	align-items: center;
+	justify-content: center;
+}
+
+.box2{
+	width: 100px;
+	height: 100px;
+	background-color: #000;
+	margin-left: 200px;
+}
+
+
+.container{
+	max-width: 1200px;
+	width: 100%;
+	display: flex;
+	margin: 0 auto;
+}
+
+.wrap{
+	flex-wrap: wrap;
+}
+
+.space-betweeen{
+	justify-content: space-between;
+}
+
+.box-123{
+	flex: 1;
+	padding: 15px;
+}
+
+.box-123__content{
+	min-height: 500px;
+	background-color: yellow;
+}
+
+.box-1234{
+	flex: 0 0 50%;
+	padding: 15px;
+}
+
+.box-1234.w25{
+	flex: 0 0 25%;
+}
+.box-1234.w75{
+	flex: 0 0 75%;
+}
+
+.box-1234__content{
+	min-height: 200px;
+	background-color: green;	
+}
+
+.boxes{
+	width: 100px;
+	height: 100px;
+	background-color: lightcoral;
+	margin: 15px;
+}
+
+.boxes.x2{
+	width: 200px;
+}
