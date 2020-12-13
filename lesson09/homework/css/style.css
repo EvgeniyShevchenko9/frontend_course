@@ -1,0 +1,80 @@
+*{
+	transition: all .1s ease-in;
+    font-family: Garamond, serif;
+    font-size: 32px;
+    text-align: center;
+    margin: 0px;
+	padding: 0px;
+    -moz-box-sizing: border-box; /* Для Firefox */
+    -webkit-box-sizing: border-box; /* Для Safari и Chrome */
+    box-sizing: border-box; /* Для IE и Opera */
+}
+
+.sicilian_defense {
+    position: relative;
+    width: 90%;
+    min-width: 760px;
+    min-height: 800px;
+    background-color: #F8F8F8;
+    margin: 0 auto;
+}
+
+.chessboard {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.title {
+    display: block;
+    text-shadow: 1px 1px 2px gray;
+    width: 650px;
+    margin: 30px auto 10px;
+}
+
+.boxes {
+    display: flex;
+	justify-content: left;
+    flex-wrap: wrap;
+    width: 650px;
+    margin: 0 auto;
+    border: outset 5px lightgrey;
+}
+
+.field {
+    display: block;
+    background-color: #924120;
+    width: 80px;
+    height: 80px;
+    color: #E8C99A;
+    text-align: left;
+    padding: 2px;
+    position: relative;
+}
+
+
+.field:nth-child(2n) {
+    background-color: #E8C99A;
+    color: #924120;
+}
+
+.field:nth-child(9n+1) {
+    position: absolute;
+    z-index: -1;
+}
+
+.field span {
+    font-size: 14px;
+    display: table-cell;
+    vertical-align: top;    
+}
+
+img {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  z-index: 1;
+}
