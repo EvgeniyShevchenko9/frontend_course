@@ -1,0 +1,58 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.container{
+	background: #333;
+	min-height: 100vh;
+	padding: 50px 0;
+	max-width: 1000px;
+	width: 100%;
+	margin: 0 auto;
+}
+
+.list{
+	max-width: 500px;
+	margin: 0 auto;
+}
+
+label{
+	display: block;
+	background-color: #88839e;
+	padding: 7px;
+	font-family: sans-serif;
+	color: #fff;
+	border-top: 2px solid #88839e;
+	border-bottom: 2px solid #88839e;
+	transition: all 0.3s;
+}
+
+label:nth-child(2n){
+	background-color: #7a7593;
+	border-top: 2px solid #7a7593;
+	border-bottom: 2px solid #7a7593;
+}
+
+label:hover{
+	border-top: 2px solid #fff;
+	border-bottom: 2px solid #fff;
+	background-color: #888;
+	cursor: pointer
+}
+
+input[type="checkbox"]:checked + span{
+	text-decoration: line-through;
+}
+
+.description{
+	font-size: 12px;
+}
+
+.description:before{
+	content: '('
+}
+.description:after{
+	content: ')'
+}
