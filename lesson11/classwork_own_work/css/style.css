@@ -1,0 +1,15 @@
+
+.box {
+    min-height: 50px;
+    background-color: #eee;
+}
+
+.box_m {
+    min-height: 50px;
+    background-color: navy;
+}
+
+.box_mb {
+    min-height: 300px;
+    background-color: navy;
+}

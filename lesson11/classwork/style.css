@@ -1,0 +1,33 @@
+.gray-bg{
+	background-color: #ddd;
+	min-height: 300px;
+}
+
+img{
+	max-width: 100%;
+}
+
+.box{
+	background-color: #eee;
+	min-height: 200px;
+}
+
+.top-menu{
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	background: #333;
+	min-height: 50px;
+	z-index: 999;
+}
+
+.top-menu ul{
+	list-style: none;
+	padding-left: 0;
+}
+
+.top-menu li{
+	color: aliceblue;
+	font-size: 24px;
+}
