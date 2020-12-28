@@ -7,7 +7,8 @@
 <script>
     let first_number = prompt ("Enter first number", 1);
     let second_number = prompt ("Enter second number", 1);
-    alert (first_number*second_number);
+    let result = first_number*second_number
+    alert (first_number+" * "+second_number+" = "+result);
     let FirstName = prompt("Введите имя", "Евгений");
     let SurName = prompt("Введите фамилию", "Шевченко");
     let PlayName = prompt("Введите название пьесы", "Ромео и Джульетта");
@@ -16,6 +17,8 @@
     let rowNo = prompt("Введите номер ряда", 4);
     let placeNo = prompt("Введите номер места", 45);
     let timeStart = prompt("Введите время начала", "19:30");    
-    alert ("Ваш билет:"+"\n"+"Имя: "+FirstName+"\n"+"Фамилия: "+SurName+"\n"+"Выступление: "+PlayName+"\n"+"Театр: "+TheatreName+"\n"+"Сектор: "+sectorNo+"\n"+"Ряд: "+rowNo+"\n"+"Место: "+placeNo+"\n"+"Время: "+timeStart)
+    let Ticket = ("Ваш билет:"+"\n"+"Имя: "+FirstName+"\n"+"Фамилия: "+SurName+"\n"+"Выступление: "+PlayName+"\n"+"Театр: "+TheatreName+"\n"+"Сектор: "+sectorNo+"\n"+"Ряд: "+rowNo+"\n"+"Место: "+placeNo+"\n"+"Время: "+timeStart)
+    console.log(Ticket);
+    alert(Ticket);
 </script>
 </html>
