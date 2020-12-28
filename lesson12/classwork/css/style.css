@@ -1,0 +1,73 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,700;1,300&display=swap");
+* {
+  font-family: 'Open Sans';
+  font-weight: 300;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 25px 15px;
+}
+
+header {
+  min-height: 300px;
+  background-color: silver;
+}
+
+.tabs, .tabs2 {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  border-bottom: 1px solid #08c;
+  margin-bottom: 10px;
+}
+.tabs__item {
+  background: #08c;
+  color: #eee;
+  border: 1px solid #08c;
+  margin-right: 2px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  position: relative;
+  bottom: -1px;
+}
+.tabs__item--active {
+  background-color: #eee;
+  border-bottom-color: #eee;
+  color: #08c;
+}
+.tabs__item--rounded {
+  border-radius: 25px;
+}
+.tabs__link {
+  color: inherit;
+  text-decoration: none;
+  padding: 5px 10px;
+}
+.tabs--no-border {
+  border-bottom: none;
+}
+.tabs--end {
+  justify-content: flex-end;
+}
+
+.tabs2 {
+  margin-bottom: 0;
+}
+
+@media (max-width: 500px) {
+  .tabs, .tabs2 {
+    margin-bottom: 50px;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

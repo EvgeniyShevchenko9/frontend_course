@@ -1,0 +1,13 @@
+$primary-bg: #333;
+$primary-color: silver;
+
+* {
+    margin: 0;
+    padding: 20;
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+    border-bottom-color: $primary-color;
+}
