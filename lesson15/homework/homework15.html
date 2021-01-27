@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Homework15</title>    
+</head>
+
+<style>
+    h1 {
+        font-family: Arial, sans-serif;
+        font-size: 18px;
+        color: #0cc;
+        padding: 20px;
+    }
+    article {
+        display: block;
+        background: #f0f0f0;
+        margin: 10px;
+        padding: 10px;
+        line-height: 2;
+    }
+    button {
+        background: #99ee99;
+        padding: 10px;
+        margin-right: 10px;
+    }
+    button:hover {
+        background: #99ff99;
+    }
+</style>
+
+<body>
+    <h1><em>Домашнее задание к уроку "JavaScript: типы данных, операторы, циклы"</em></h1>
+    <article><button name="button1" onclick="task1();">Выполнить скрипт 1</button>1. Сумма чисел. Предложить пользователю ввести два числа и вывести их сумму</article>
+    <article>
+        <p>2. Генератор случайных чисел</p>
+        <p><button name="button2a" onclick="task2a();">Выполнить скрипт 2а</button>а) Имитация бросания двух игральных костей (выпадают числа от 1 до 6)</p>
+        <p><button name="button2b" onclick="task2b();">Выполнить скрипт 2б</button>б) Имитация игры "орёл-решка"</p>
+        <p><button name="button2c" onclick="task2c();">Выполнить скрипт 2в</button>в) Создать скрипт, принимающий целое число от пользователя, а затем выводящий случайное целое число от 1 до принятого числа</p>
+        <p><button name="button2d" onclick="task2d();">Выполнить скрипт 2г</button>г) Создать скрипт, принимающий два числа от пользователя, а затем выводящий случайное число в диапазоне принятых чисел</p>
+    </article>
+    <article><button name="button3" onclick="task3();">Выполнить скрипт 3</button>3. (работа с кавычками) Используя конструкцию if..else, написать скрипт спрашивающий "Каково "официальное" название <em>JavaScript</em>?".<br>Если пользователь введёт "<em>ECMAScript</em>", вывести "Верно!", иначе вывести "Не знаете? "ECMAScript"!"</article>
+    <article><button name="button4" onclick="task4();">Выполнить скрипт 4</button>4. (оператор '?') Перепишите if с использованием оператора '?':<br>if (a + b меньше 4)<br>result = 'Мало'<br>else<br>result = 'Много'</article>
+
+    <script>
+        function task1() {
+            let a = prompt ("Введите первое число:", 0);
+            let b = prompt ("Введите второе число:", 0);
+            alert ("Сумма чисел "+parseFloat(a)+" и "+parseFloat(b)+": "+(parseFloat(a)+parseFloat(b)));
+        }
+        function task2a() {
+            let a = Math.random();
+            let b = Math.random();
+            let cube1 = Math.floor(1 + a * 6);
+            let cube2 = Math.floor(1 + b * 6);
+            alert ("Случайные числа "+a+" и "+b+"\nЗначения кубиков: "+cube1+" и "+cube2);
+        }
+        function task2b() {
+            let a = Math.random();
+            let result = Math.round(a) ? "Орёл" : "Решка";
+            alert ("Случайное число: "+a+" Результат: "+result);
+        }
+        function task2c() {
+            let a = prompt ("Введите целое число, большее чем 1:", 100);
+            let b = parseInt(a);
+            if ( isNaN(b) || b<2 ) {
+                alert ("Неверный ввод числа");
+            } else {
+                let result = Math.floor(Math.random() * b + 1);
+                alert ("Случайное число в диапазоне от 1 до "+b+": "+result);
+            }
+        }
+        function task2d() {
+            let a = +prompt ("Введите любое первое число:", -100);
+            let b = +prompt ("Введите любое второе число:", 100);
+            if ( isNaN(a) || isNaN(b) ) {
+                alert ("Неверный ввод чисел");
+            } else if (a<b) {
+                let result = Math.random() * (b - a) + a;
+                alert ("Случайное число в диапазоне от "+a+" до "+b+": "+result);
+            } else {
+                let result = Math.random() * (a - b) + b;
+                alert ("Случайное число в диапазоне от "+b+" до "+a+": "+result);
+            }
+        }
+        function task3() {
+            let answer = prompt('Каково "официальное" название JavaScript?');
+            if (answer == 'ECMAScript') {
+                alert ('Верно!');
+            } else {
+                alert ('Не знаете? "ECMAScript"!');
+            }
+        }
+        function task4() {
+            alert ("let result = (a + b < 4) ? 'Мало' : 'Много';");
+        }
+    </script>
+
+</body>
+
+</html>

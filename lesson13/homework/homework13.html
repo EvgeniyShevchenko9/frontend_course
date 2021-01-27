@@ -4,6 +4,38 @@
     <meta charset="UTF-8">
     <title>Homework13</title>    
 </head>
+
+<style>
+    h1 {
+        font-family: Arial, sans-serif;
+        font-size: 18px;
+        color: #0cc;
+        padding: 20px;
+    }
+    article {
+        background: #f0f0f0;
+        padding: 20px;
+        margin: 10px;
+        display: block;
+    }
+</style>
+
+<body>
+    <h1><em>Домашнее задание к уроку "Введение в JavaScript"</em></h1>
+    <article>1.	Написать скрипт, который просит ввести два числа и с помощью метода alert() выводит результат умножения этих двух чисел</article>
+    <article>
+        <p>2. Написать скрипт формирования билета в театр с полями:</p>
+        <p>Имя: <strong>Евгений</strong></p>
+        <p>Фамилия: <strong>Шевченко</strong></p>
+        <p>Пьеса: <strong>Ромео и Джульетта</strong></p>
+        <p>Театр: <strong>Оперный театр</strong></p>
+        <p>Сектор: <strong>5</strong></p>
+        <p>Ряд: <strong>4</strong></p>
+        <p>Место: <strong>45</strong></p>
+        <p>Время начала: <strong>19:30</strong></p>
+        <p><strong>Жирным</strong> выделены поля, которые вводятся динамически, то есть через переменные (через запрос prompt к пользователю)</p>
+    </article>
+
 <script>
     let first_number = prompt ("Enter first number", 1);
     let second_number = prompt ("Enter second number", 1);
@@ -21,4 +53,7 @@
     console.log(Ticket);
     alert(Ticket);
 </script>
+
+</body>
+
 </html>
