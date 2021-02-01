@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Homework16</title>    
+</head>
+
+<style>
+    h1 {
+        font-family: Arial, sans-serif;
+        font-size: 28px;
+        color: #0bb;
+        padding: 20px;
+    }
+    article {
+        display: block;
+        min-width: 500px;
+        background: #f0f0f0;
+        margin: 10px;
+        padding: 10px;
+        line-height: 2;
+    }
+    button {
+        background: #99ee99;
+        min-width: 60px;
+        padding: 20px;
+        margin: 10px;        
+    }
+    button:hover {
+        background: #99ff99;
+    }
+    .buttonView {
+        background: #add8e6;
+    }
+    .buttonView:hover {
+        background: #adeee6;
+    }
+    .buttonReset {
+        background: lightyellow;
+    }
+    .buttonReset:hover {
+        background: #ffffb0;
+    }
+    .buttonPlay {
+        background: #ffdd00;
+        font-weight: bold;
+        min-width: 130px;
+    }
+    .buttonPlay:hover {
+        background: #ffee00;
+    }
+</style>
+
+<body>
+    <h1><em>Домашнее задание к уроку "JavaScript: функции"</em></h1>
+    <article>"СПОРТЛОТО-2021"<br><em>Инструкция:</em> Введите 6 различных чисел от 1 до 36, затем нажмите кнопку "<strong>Играть!</strong>". Страница сгенерирует 6 различных случайных чисел в диапазоне от 1 до 36 и выведет количество совпавших чисел и сами эти числа. Кнопку "<strong>Играть!</strong>" можно нажимать неограниченное количество раз на одном введённом наборе чисел.</article>
+    <article>
+        <button name="button01" onclick="AddNumber(1);">1</button>
+        <button name="button02" onclick="AddNumber(2);">2</button>
+        <button name="button03" onclick="AddNumber(3);">3</button>
+        <button name="button04" onclick="AddNumber(4);">4</button>
+        <button name="button05" onclick="AddNumber(5);">5</button>
+        <button name="button06" onclick="AddNumber(6);">6</button>
+        <br>
+        <button name="button07" onclick="AddNumber(7);">7</button>
+        <button name="button08" onclick="AddNumber(8);">8</button>
+        <button name="button09" onclick="AddNumber(9);">9</button>
+        <button name="button10" onclick="AddNumber(10);">10</button>
+        <button name="button11" onclick="AddNumber(11);">11</button>
+        <button name="button12" onclick="AddNumber(12);">12</button>
+        <br>
+        <button name="button13" onclick="AddNumber(13);">13</button>
+        <button name="button14" onclick="AddNumber(14);">14</button>
+        <button name="button15" onclick="AddNumber(15);">15</button>
+        <button name="button16" onclick="AddNumber(16);">16</button>
+        <button name="button17" onclick="AddNumber(17);">17</button>
+        <button name="button18" onclick="AddNumber(18);">18</button>
+        <br>
+        <button name="button19" onclick="AddNumber(19);">19</button>
+        <button name="button20" onclick="AddNumber(20);">20</button>
+        <button name="button21" onclick="AddNumber(21);">21</button>
+        <button name="button22" onclick="AddNumber(22);">22</button>
+        <button name="button23" onclick="AddNumber(23);">23</button>
+        <button name="button24" onclick="AddNumber(24);">24</button>
+        <br>
+        <button name="button25" onclick="AddNumber(25);">25</button>
+        <button name="button26" onclick="AddNumber(26);">26</button>
+        <button name="button27" onclick="AddNumber(27);">27</button>
+        <button name="button28" onclick="AddNumber(28);">28</button>
+        <button name="button29" onclick="AddNumber(29);">29</button>
+        <button name="button30" onclick="AddNumber(30);">30</button>
+        <br>
+        <button name="button31" onclick="AddNumber(31);">31</button>
+        <button name="button32" onclick="AddNumber(32);">32</button>
+        <button name="button33" onclick="AddNumber(33);">33</button>
+        <button name="button34" onclick="AddNumber(34);">34</button>
+        <button name="button35" onclick="AddNumber(35);">35</button>
+        <button name="button36" onclick="AddNumber(36);">36</button>
+        <br>
+        <button class="buttonView" name="buttonView" onclick="ViewNumbers();">Просмотреть числа</button>
+        <button class="buttonReset" name="buttonReset" onclick="ResetNumbers();">Сбросить ввод</button>
+        <button class="buttonPlay" name="buttonPlay" onclick="Play();">Играть!</button>
+    </article>
+
+    <script>
+        let ArrayOfNumbers = [];
+        let ArrayOfRandoms = [];
+        let i=0;
+        
+        function AddNumber(a) {
+            let statusMessage = "";
+            if (ArrayOfNumbers.length == 6) {
+                statusMessage="Уже введено максимальное количество чисел - 6";
+            }
+            else if (ArrayOfNumbers.includes(a)) {
+                statusMessage="Число " + a + " уже введено";
+            }
+            else {
+                ArrayOfNumbers.push(a);
+                ArrayOfNumbers.sort(function(a,b) {return a-b;}); // сортировка массива по возрастанию чисел, для красоты
+                statusMessage="Успешно введено число: " + a + "\nВсего введено чисел: " + ArrayOfNumbers.length;
+            }
+            alert(statusMessage);
+        }
+        
+        function ViewNumbers() {
+            let statusMessage = "";
+            if (ArrayOfNumbers.length == 0) {
+                statusMessage="Ни одного числа не введено";
+            }
+            else {
+                statusMessage="Количество введённых чисел: " + ArrayOfNumbers.length + "\nВведённые числа:";
+                i=0;
+                do {
+                    statusMessage += " " + ArrayOfNumbers[i];
+                    i++;
+                } while (i<ArrayOfNumbers.length);
+            }
+            alert(statusMessage);
+        }
+
+        function ResetNumbers() {
+            ArrayOfNumbers.length = 0;
+            alert ("Ввод чисел сброшен, ни одного числа не введено");
+        }
+        
+        function Play () {
+            let statusMessage = "";
+            if (ArrayOfNumbers.length < 6) {
+                statusMessage="Введено недостаточное количество чисел - " + ArrayOfNumbers.length + "\nНеобходимо ввести 6 чисел";
+                alert(statusMessage);
+                return;
+            }
+            ArrayOfRandoms.length = 0;
+            let RandomNumber = 0;
+            do {
+                RandomNumber = Math.floor(1 + Math.random() * 36); // генерация случайного числа от 1 включительно до 36 включительно
+                if (!(ArrayOfRandoms.includes(RandomNumber))) { ArrayOfRandoms.push(RandomNumber); }; // добавление в массив случайного числа, если такого числа ещё нет в массиве
+            } while (ArrayOfRandoms.length < 6);
+            ArrayOfRandoms.sort(function(a,b) {return a-b;}); // сортировка массива по возрастанию чисел, для красоты
+            statusMessage="Введённые числа:";
+            i=0;
+                do {
+                    statusMessage += " " + ArrayOfNumbers[i];
+                    i++;
+                } while (i<ArrayOfNumbers.length);
+            statusMessage += "\nВыпавшие числа:";
+            i=0;
+                do {
+                    statusMessage += " " + ArrayOfRandoms[i];
+                    i++;
+                } while (i<ArrayOfRandoms.length);
+            let NumberOfMatches = 0;
+            let TextOfMatches = "";
+            for (i=0; i<6; i++) {
+                if (ArrayOfRandoms.includes(ArrayOfNumbers[i])) {
+                    NumberOfMatches++;
+                    TextOfMatches += " " + ArrayOfNumbers[i];
+                    }
+            }
+            statusMessage += "\n\nКоличество совпадений: " + NumberOfMatches;
+            if (NumberOfMatches) {statusMessage += "\nСовпавшие числа:" + TextOfMatches;};
+            alert(statusMessage);
+        }
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Classwork16</title>
+</head>
+<body>
+<script>
+//    function getRandom (min,max) {
+//        return Math.random()*(max-min)+min;
+//    }
+//    console.log(getRandom(4,8));
+//    
+    function VStepen(a, b=2) {
+        let res = 1;
+        for (i=1; i<=b; i++) {
+            res = res * a;
+        }
+        return res;
+    }
+    console.log (VStepen (4,3));
+    console.log (VStepen (6));
+    
+    function GetMin (a, b, c=Infinity) {
+        let res = a;
+        if (b < res) {res = b};
+        if (c < res) {res = c};
+        return res;
+    }
+    console.log (GetMin (34,6,100));
+    console.log (GetMin (11,-3));
+    
+    function GetMinMax(type,a,b,c,d) {
+        let res = (type=='min') ? Math.min (a,b,c,d) : Math.max (a,b,c,d);
+        return res;
+    }
+    console.log (GetMinMax('min', 2, 4, 6, 8));
+    console.log (GetMinMax('max', 2, 4, 6, 8));
+    
+</script>
+</body>
+</html>
