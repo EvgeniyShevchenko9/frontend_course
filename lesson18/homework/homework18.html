@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Homework18</title>    
+</head>
+
+<body>
+<span>(Все результаты - в консоли, нажмите F12 для просмотра)</span>
+
+<script>
+    // пункт 0. доработка классной работы
+    // вывести имя сотрудника у которого наибольшая зарплата
+    // если объект пустой то вывести "нет сотрудников"
+    let salaries = {
+        Petya: 100,
+        Vasya: 300,
+        Dasha: 250,
+        BigBOSS: 3500,
+        Stepa: 400
+    }
+    let result = "нет сотрудников";
+    let maxSalary = -Infinity;
+    for (let key in salaries) {if(salaries[key]>maxSalary) {result=key; maxSalary=salaries[key];};};
+    console.log(result, "с зарплатой", maxSalary);
+    
+    // Домашняя работа
+    
+    // пункт 1. Функция - умножение всех элементов массива на 2
+    function ArrayDoubleValues (a) {
+        let b = [];
+        for (let i = 0; i < a.length; i++) {b[i] = a[i] * 2;};
+        return (b);
+    }
+    // проверка
+    console.log(ArrayDoubleValues([1, 2, 3, 10, 15]));
+    
+    // пункт 2. По объекту названий покупок и их стоимости
+    // а) вывести общую стоимость всех покупок
+    // б) вывести самую дорогую покупку
+    // в) вывести самую дешевую покупку
+    let obj = {
+        bread: 25,
+        milk: 30,
+        chips: 50,
+        water: 10,
+        cucumbers: 42
+    }
+    let TotalAmount = 0;
+    let maxValue = -Infinity;
+    let maxValueItem = '';
+    let minValue = Infinity;
+    let minValueItem = '';
+    for (let key in obj) {
+        TotalAmount += obj[key];
+        if(obj[key]>maxValue) {maxValueItem=key; maxValue=obj[key];};
+        if(obj[key]<minValue) {minValueItem=key; minValue=obj[key];};
+    }
+    console.log('TOTAL:',TotalAmount);
+    console.log("Max price:", maxValue, "item:", maxValueItem);
+    console.log("Min price:", minValue, "item:", minValueItem);
+    
+    // пункт 3. Написать функцию Fizzbuzz(n), где параметр n - целое число
+    // выводит в консоль числа от 1 до n
+    // если n кратно 3, вывести вместо n "fizz"
+    // если n кратно 5, вывести вместо n "buzz"
+    // если n кратно и 3, и 5 - вывести вместо n "fizzbuzz"
+    function Fizzbuzz (n) {
+        let i = 1;
+        do {if (i%15 == 0) {console.log ("fizzbuzz");}
+            else if (i%5 == 0) {console.log ("buzz");}
+            else if (i%3 == 0) {console.log ("fizz");}
+            else console.log(i);            
+            i++;
+        } while (i <= n);
+    }
+    // проверка
+    Fizzbuzz (22);
+    
+    // пункт 4**. Суммировать две матрицы 3x3:
+    // A
+    // 4 5 13
+    // -5 0 4
+    // 12 -3 12
+    // B
+    // 5 8 0
+    // 87 65 7
+    //-50 24 43
+    let MatrixA = [
+        [4, 5, 13],
+        [-5, 0, 4],
+        [12, -3, 12]
+    ]
+    let MatrixB = [
+        [5, 8, 0],
+        [87, 65, 7],
+        [-50, 24, 43]
+    ]
+    function SumOfTwoMatrices (a, b) {
+        let MSumArray = [];
+        for (let i = 0; i < a.length; i++) {
+            MSumArray[i] = [];
+            for (let j = 0; j < a[i].length; j++) {
+                MSumArray[i][j] = a[i][j] + b[i][j];
+            }
+        }
+        return (MSumArray);
+    }
+    // проверка
+    console.log("Матрица A:", MatrixA);
+    console.log("Матрица B:", MatrixB);
+    console.log("Сумма матриц A и B:", SumOfTwoMatrices (MatrixA, MatrixB));    
+    
+</script>
+
+</body>
+
+</html>

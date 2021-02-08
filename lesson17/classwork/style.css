@@ -1,0 +1,31 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.container{
+	max-width: 1000px;
+	width: 100%;
+	margin: 0 auto;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.box{
+	width: 200px;
+	height: 200px;
+	background-color: #08c;
+	margin: 10px;
+}
+
+.box-green{
+	background-color: green;
+	color: #fff;
+}
+
+.box-sm{
+	width: 100px;
+	height: 100px;
+}

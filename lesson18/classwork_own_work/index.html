@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Classwork18</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css">
+</head>
+<body>
+
+<section class="container mt-3">
+   <div class = row>
+    <ul class="list-group col-12" id="playlist"></ul>
+   </div>
+</section>
+
+<script>
+    let playlist = ["song1", "song2", "song3", "song4"];
+    
+    function print (text) {document.write(text);}
+    
+    for (let i=0; i<playlist.length; i++) {
+        let li_element = document.createElement("li");
+        li_element.classList.add("list-group-item");
+        li_element.innerText = playlist[i];
+        let parent=document.getElementById("playlist");
+        parent.appendChild(li_element);
+    }
+
+    let salaries = {
+        Petya: 100,
+        Vasya: 200,
+        Dasha: 300
+    }
+    
+    let sum = 0;
+    for (let key in salaries) {sum+=salaries[key]};
+    console.log(sum);
+    
+</script>
+</body>
+</html>
