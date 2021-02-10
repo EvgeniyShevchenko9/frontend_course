@@ -4,6 +4,7 @@
 
 * {
     color: var(--main-color);
+    transition: all .1s ease-in;
 }
 
 .row {
@@ -30,6 +31,10 @@
     border-radius: 10px;
 }
 
+.NewToDoSpan:hover {
+    cursor: grab;
+}
+
 label {
     margin-top: 10px;
 }
@@ -52,8 +57,10 @@ label {
 
 .task-container {
     display: flex;
-    background-color: white;
-    border: 1px solid gray;
+    border: 1px solid var(--main-color);
+    border-left: 15px solid var(--main-color);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
     margin-bottom: 5px;
     padding: 5px;
     align-items: flex-start;
@@ -64,7 +71,13 @@ label {
     opacity: 60%;
 }
 
+.line-thr {
+    text-decoration: line-through;
+}
+
 .task-descr {
+    max-width: 50%;
+    overflow: hidden;
     margin: 0 4px;
 }
 

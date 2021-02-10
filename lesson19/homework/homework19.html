@@ -22,17 +22,19 @@
     <div class="container-md">
         <div class="row mt-3 NewTaskSection">
             <div class="col12">
-               <span class="NewToDoSpan">New To-Do task</span><br>
-               <form action="#" method="get" name="NewTaskForm">
+               <span class="NewToDoSpan" onclick="ShowHideForm()">New To-Do task</span>
+               <small>(click to show / hide form)</small>    
+               <br>
+               <form action="#" method="get" name="NewTaskForm" id="TaskForm">
                   <label>
                       <span>Date / Time</span><br>
                       <input type="datetime-local" name="DateTime">
                   </label><br>
                   <span>To-Do task description</span><br>
                   <textarea name="TaskDescription" cols="40" rows="5" placeholder="Enter task description, e.g. Go to gym"></textarea><br>
-                  <span>Choose color for this To-Do task:</span>
-                  <input type="color" name="TaskColor" value="#ffffff"><br>
-                  <button class="NewTaskButton">Create new To-Do task</button>
+                  <span>Choose border color for this task:</span>
+                  <input type="color" name="TaskColor" value="#808080"><br>
+                  <button class="NewTaskButton" id="NewTaskButtonID">Create new To-Do task</button>
                </form>
             </div>
         </div>
@@ -40,26 +42,25 @@
     
     <div class="container-md">
         <div class="row mt-2">
-           <div class="col12 col-md-6">
-               <div class="task-container">
-                   <span>01/01/2021 13:05</span>
+           <div class="col12 col-md-6" id="tasks-to-do">
+               <!--<div class="task-container">
+                   <span class="task-time">01/Feb/2021 13:05</span>
                    <span class="task-descr">Go to gym</span>
                    <div class="buttons-section">
                        <button class="task-button button-done">Done</button>
-                       <button class="task-button">Delete</button>
+                       <button class="task-button button-delete">Delete</button>
                    </div>
-               </div>
-                              
+               </div>-->
            </div>
-           <div class="col12 col-md-6">
-               <div class="task-container">
-                   <span class="opacity60">01/01/2021 13:05</span>
-                   <span class="task-descr opacity60">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea unde quisquam tempora at sint maiores accusamus et nemo! Minus unde fugit consectetur dolore architecto, at dolor eius eveniet odio placeat?</span>
+           <div class="col12 col-md-6" id="tasks-completed">
+               <!--<div class="task-container">
+                   <span class="task-time opacity60">01/Dec/2021 13:05</span>
+                   <span class="task-descr opacity60 line-thr">completed task description</span>
                    <div class="buttons-section">
                        <button class="task-button button-redo">Redo</button>
-                       <button class="task-button">Delete</button>
+                       <button class="task-button button-delete">Delete</button>
                    </div>
-               </div>
+               </div>-->
            </div>
         </div>
     </div>

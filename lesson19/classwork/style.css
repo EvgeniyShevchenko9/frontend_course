@@ -1,0 +1,9 @@
+.submenu{
+	background-color: #08c;
+	color: #fff;
+	display: none;
+}
+
+.submenu.open{
+	display: block;
+}
