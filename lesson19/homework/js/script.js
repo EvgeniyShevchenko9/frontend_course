@@ -42,7 +42,8 @@ function NewTaskFromForm(event) {
     }
     let t = FormClone.elements["TaskDescription"].value;
     if (t == "") { t = "\(empty task description\)"};
-    CreateNewTask(GetTaskDateTime(), t, FormClone.elements["TaskColor"].value);
+    CreateNewTask(GetTaskDateTime(), t, FormClone.elements["TaskColor"].value); // создаём новый элемент с данными из формы
+    FormClone.elements["TaskDescription"].value = ""; // очищаем зону ввода текста в форме
 }
 
 function CreateNewTask (datetime, descr, taskcolor) {
@@ -69,8 +70,8 @@ function CreateNewTask (datetime, descr, taskcolor) {
     btnDiv.appendChild(btn1);
     btnDiv.appendChild(btn2); // добавление кнопок в блок кнопок
     newTask.appendChild(btnDiv); // добавление всего блока кнопок в таск
-    newTask.style.borderColor = taskcolor;
-    document.getElementById("tasks-to-do").appendChild(newTask); // добавление готового таска в див id="tasks-to-do"    
+    newTask.style.borderColor = taskcolor;    
+    document.getElementById("tasks-to-do").insertBefore(newTask, document.getElementById("tasks-to-do").firstChild); // добавление готового таска newTask перед первым элементом в див id="tasks-to-do"
 }
 
 function DeleteContainer (obj) {
@@ -95,7 +96,7 @@ function ClickDone () {
     BtnRedo.innerText = "Redo";
     BtnRedo.onclick = ClickRedo; // навешиваем события на кнопки
     movedObj.querySelector(".button-delete").onclick = ClickDelete;
-    document.getElementById("tasks-completed").appendChild(movedObj); // вставляем этот таск контейнер в "tasks-completed"
+    document.getElementById("tasks-completed").insertBefore(movedObj, document.getElementById("tasks-completed").firstChild); // вставляем таск контейнер movedObj в начало "tasks-completed"
 }
 
 function ClickRedo () { // обратная процедура к ClickDone
@@ -108,14 +109,14 @@ function ClickRedo () { // обратная процедура к ClickDone
     BtnDone.innerText = "Done";
     BtnDone.onclick = ClickDone;
     movedObj.querySelector(".button-delete").onclick = ClickDelete;
-    document.getElementById("tasks-to-do").appendChild(movedObj); // вставляем этот таск контейнер в "tasks-to-do"
+    document.getElementById("tasks-to-do").insertBefore(movedObj, document.getElementById("tasks-to-do").firstChild); // вставляем таск контейнер movedObj в начало "tasks-to-do"
 }
 
 // автоматическое добавление демо задач после полной загрузки страницы
 // можно совсем убрать из кода
 window.addEventListener('load', (event) => {
-    CreateNewTask (CurrentDateTimeString(), "-demo task- Feed the kitten", "#e36444");
-    CreateNewTask (CurrentDateTimeString(), "-demo task- Finish this homework", "#e3db44");
-    CreateNewTask (CurrentDateTimeString(), "-demo task- Make a million dollars", "#078f39");
     CreateNewTask (CurrentDateTimeString(), "-demo task- Start to feel like a part of the Universe", "#3812e3");
+    CreateNewTask (CurrentDateTimeString(), "-demo task- Make a million dollars", "#078f39");
+    CreateNewTask (CurrentDateTimeString(), "-demo task- Finish this homework", "#e3db44");
+    CreateNewTask (CurrentDateTimeString(), "-demo task- Feed the kitten", "#e36444");
 })
