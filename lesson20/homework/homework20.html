@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Homework20</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <p class="task-description">Задание: получение питомцев с определённым статусом с сервера питомцев <a href="https://petstore.swagger.io/" target="_blank">https://petstore.swagger.io/</a> через API сервера</p>
+    <p class="task-description">API: <a href="https://petstore.swagger.io/#/pet/findPetsByStatus" target="_blank">*открыть описание API в новом окне*</a></p>
+    <p class="task-description">В интерфейсе достаточно реализовать выпадающий список статусов и кнопку SEARCH</p>
+    <p class="task-description">По завершению поиска выдать найденные элементы в виде плитки на странице под формой, - либо если ничего не найдено, написать “No results found”</p>
+    <div class="container"><!--начало основного контейнера-->
+       <div class="selector">
+           <form name="form1">
+               <p><select name="status">
+               <option disabled selected>Select status</option>
+               <option>available</option>
+               <option>pending</option>
+               <option>sold</option>
+               <option>bad_status</option>
+               </select></p>
+               <p><button onclick="SearchButtonClick()">SEARCH</button></p>
+           </form>
+       </div>
+       
+       <div class="results" id="results"><!--сюда будем выводить результаты запроса - сгенерированные элементы div с классом pet__item -->
+       </div>
+       
+    </div><!--конец основного контейнера-->
+    
+    <script>
+        
+        let pets = [];
+        let xhr = new XMLHttpRequest();
+		xhr.onreadystatechange = function(){
+			if (xhr.readyState === 4) {
+                pets = JSON.parse(xhr.responseText);
+                if (pets.length === 0) { alert ("No results found");};                
+                for (let i = 0; i < pets.length; i++) {
+                    let NewChild = document.createElement("div");
+                    NewChild.classList.add("pet__item");
+                    NewChild.innerHTML = GeneratePetItemHTMLText(pets[i]);
+                    document.getElementById("results").appendChild(NewChild);
+                }
+			}
+		}
+        
+        function SearchButtonClick () {
+            event.preventDefault();
+            pets = [];
+            document.getElementById("results").innerHTML = "";
+            xhr.open("GET", "https://petstore.swagger.io/v2/pet/findByStatus?status=" + form1.status.value);
+            xhr.send();
+        }
+        
+        function GeneratePetItemHTMLText (pet_arr_element) {
+            let res = "";
+            for (let key in pet_arr_element) {
+                res += "<p><strong>" + key + "</strong> : " + JSON.stringify(pet_arr_element[key]) + "</p>";
+            };
+            return res;
+        }
+        
+    </script>
+</body>
+</html>

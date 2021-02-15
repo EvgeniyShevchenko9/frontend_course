@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Classwork20</title>
+</head>
+<body>
+   <header>
+       <button onclick="sendRequest()">LOAD INFO</button>
+   </header>
+    <section id="ajax">        
+    </section>
+<script>
+    let xhr = new XMLHttpRequest;
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) {
+            console.log("запрос прошёл успешно");
+            document.getElementById("ajax").innerHTML=xhr.responseText;
+        };
+    };
+    console.log(xhr);
+    xhr.open("GET","detail.html");
+    
+    function sendRequest () { xhr.send ();}
+    
+</script>
+
+</body>
+</html>

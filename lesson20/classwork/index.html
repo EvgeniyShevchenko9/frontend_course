@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>AJAX</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<header>
+		<h1>AJAX</h1>
+		<input type="text" id="search">
+		<button onclick="sendRequest()" type="button">LOAD INFO</button>
+	</header>
+	<section>
+		<h2>Добавить нового пользователя</h2>
+		<form name="createUserFrom">
+			<input type="text" name="name" placeholder="name">
+			<input type="text" name="job" placeholder="job">
+			<button type="button" onclick="createUser()">Create USER</button>
+		</form>
+		
+		
+	</section>
+	<section id="users" class="container users"></section>
+
+	<script>
+		function createUser(){
+			let createForm = document.forms.createUserFrom;
+			
+//			console.log(createForm)
+//			console.log(createForm.name)
+//			console.log(createForm.job)
+			
+			let data = {
+				name: createForm.name.value,
+				job: createForm.job.value,
+				avatar: "https://reqres.in/img/faces/2-image.jpg",
+				email: "gor@gmail.com",	
+				first_name: "Valeriy",
+				last_name: "Gor"
+			}
+			
+			console.log(data);
+			
+			let xhrCreate = new XMLHttpRequest();
+			xhrCreate.onreadystatechange = function (){
+				if(xhrCreate.readyState === 4){
+					console.log("Успешно создан пользователь")
+				}
+			}	
+			
+			xhr.open('PUT', 'https://reqres.in/api/users/2');		
+			xhr.send(data);
+		}
+				
+		
+		let xhr = new XMLHttpRequest();
+		xhr.onreadystatechange = function (){
+			if(xhr.readyState === 4){
+				let users = JSON.parse(xhr.responseText).data;
+//				console.log(users);
+				for(let i = 0; i < users.length; i++){
+					let item = creatorNodes('div', ['user__item']);
+					
+					let img = creatorNodes('img', ['user__img'], '', users[i].avatar, 'avatar')
+					let fio = creatorNodes('div', ['user__fio'], users[i].first_name + ' ' + users[i].last_name);
+					
+					item.appendChild(img);
+					item.appendChild(fio);
+					document.getElementById('users').appendChild(item);
+				}
+			}
+		}
+		
+		
+		function sendRequest() {	
+			document.getElementById('users').innerHTML = '';
+			let search = document.getElementById('search').value;
+//			xhr.open('GET', `http://www.omdbapi.com/?t=${search}&apikey=4d6168e`);		
+			xhr.open('GET', 'https://reqres.in/api/users/2');		
+			xhr.send();
+		}		
+		
+		function creatorNodes(type, classes, content, src, alt){
+			let nodeElem = document.createElement(type);
+			for(let i = 0; i < classes.length; i++){
+				nodeElem.classList.add(classes[i])
+			}
+			if(type === 'img'){
+				nodeElem.setAttribute('src', src);
+				nodeElem.setAttribute('alt', alt);
+			} else if (content){
+				nodeElem.innerHTML = content;
+			}
+			return nodeElem;
+		}
+		
+//		console.log(creatorNodes('div', ['cl1', 'cl2'], 'Content'))
+//		console.log(creatorNodes('img', ['cl1Img', 'cl2Img'], '', 'https://html5css.ru/howto/img_avatar.png', 'avatar'))
+				
+		
+		
+		
+		
+		
+	</script>	
+</body>
+</html>
