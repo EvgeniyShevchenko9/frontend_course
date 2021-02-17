@@ -20,7 +20,7 @@
 }
 
 .container {
-	width: 100%;/*для разрешений менее 560px*/
+	width: 96%;/*для разрешений менее 583px*/
 	margin: 0 auto;
 	display: flex;
     justify-content: center;
@@ -38,7 +38,8 @@ header {
 
 .header__logo {
     display: block;
-    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
     margin-top: 48px;
 }
 
@@ -55,10 +56,10 @@ header {
 
 article {
     width: 100%;
-	margin: 0 auto;
 }
 
 article img {
+    width: 100%;
     border-radius: 8px;
     margin-bottom: 24px;
 }
@@ -98,7 +99,6 @@ article p {
     line-height: 22px;
     color: #515759;
     vertical-align: top;
-    width: 540px;
     margin-bottom: 56px;
 }
 
@@ -118,6 +118,8 @@ footer a {
     text-decoration: none;
 }
 
-@media all and (min-width: 560px) {
+@media all and (min-width: 583px) {
     .container {width: 560px;}
+    article img {width: 560px;}
+    article p {width: 540px;}    
 }
