@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Homework12</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -10,20 +11,12 @@
 
 <body>
     <span class="task-description">Задание: создать страницу по шаблону в Figma <a href="https://www.figma.com/file/bxfzVfjjHh1WBnuIHz6iZi/Setproduct-Email-Templates-(Copy)" target="_blank">*ссылка на шаблон на сайте Figma*</a>, самый правый шаблон. Использовать BEM методологию именования классов.</span><br>
-    <div class="container"><!-- делаем основной контейнер с шириной 680, - flex с "вертикальным" расположением -->
-       <!--внутренние контейнеры: ширина 560px, высота - у header и footer фиксированная, у статей - динамическая, по их контенту. Внутренние элементы каждого контейнера размещаем относительно только текущего контейнера. Контейнеров делаем 5: 1 - header, 3 - однотипные article (можно и через div, но article лучше для индексации поисковиками), и 1 - footer.-->
+    <div class="container-outer">
+    <div class="container"><!-- делаем основной контейнер - flex с "вертикальным" расположением -->
+       <!--внутренние контейнеры: высота - у footer фиксированная (164px), у header и статей - динамическая, по их контенту (расстояния по высоте между элементами задаём с помощью margin-top и margin-bottom). Контейнеров делаем 5: 1 - header, 3 - однотипные article (можно и через div, но article лучше для индексации поисковиками), и 1 - footer.-->
        
        <header>
-           <img class="header__logo--shopping-bag01" src="images/shopping-bag01.svg" width="24.05" height="18">
-           <img class="header__logo--shopping-bag02" src="images/shopping-bag02.svg" width="10.02" height="6">
-           <img class="header__logo--prfctfit201" src="images/prfctfit201.png" width="9.85" height="11.57">
-           <img class="header__logo--prfctfit202" src="images/prfctfit202.png" width="10.3" height="11.57">
-           <img class="header__logo--prfctfit203" src="images/prfctfit203.png" width="8.13" height="11.57">
-           <img class="header__logo--prfctfit204" src="images/prfctfit204.png" width="9.98" height="11.57">
-           <img class="header__logo--prfctfit205" src="images/prfctfit205.png" width="9.87" height="11.57">
-           <img class="header__logo--prfctfit206" src="images/prfctfit206.png" width="8.14" height="11.57">
-           <img class="header__logo--prfctfit207" src="images/prfctfit207.png" width="3.31" height="11.57">
-           <img class="header__logo--prfctfit208" src="images/prfctfit208.png" width="9.87" height="11.57">
+           <img class="header__logo" src="images/Logo.png" alt="PRFCT FIT logo">
            <span class="header__hellotext">Hi Sam! Here’s your weekly updates 👀️</span>
        </header>
        
@@ -53,5 +46,6 @@
        </footer>
        
     </div><!--конец основного контейнера-->
+    </div><!--конец контейнера "container-outer"-->
 </body>
 </html>
