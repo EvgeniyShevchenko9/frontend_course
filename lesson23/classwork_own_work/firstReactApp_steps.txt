@@ -1,0 +1,79 @@
+1. command prompt
+create-react-app my-adminka
+(npm install -g create-react-app)
+
+2. visual studio, папка src
+
+3. чистим папку срс от тестов и index.js
+
+4. app.js удаляем лого
+
+5. npm start в my-adminka
+
+6. app  css - clear
+app js - minimum
+index.css сброс настроек
+
+7. устанавливаем npm install react-router-dom в корне проекта
+
+8. (working with app.js)
+добавляем import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
+
+js snippets pack
+
+9. создаем новые папки в src
+views
+components
+
+in views - делаем папку логин
+
+то же самое products
+
+также, делаем папки в компонентах
+
+в каждой папке два файла, .js .css
+
+css - файлы даже не заполняем пока
+
+10. импортим и подключаем AsideMenu в App.js
+
+import AsideMenu from './components/AsideMenu/AsideMenu';
+
+<Router>
+
+<AsideMenu/>
+</Router>
+
+всё содержимое AsideMenu начинает отображаться на http://localhost:3000/
+
+11. редактируем AsideMenu.js
+
+12. в apps.js добавляем
+import Login from './views/Login/Login';
+
+<Switch>
+
+<Route path='/login'>
+<Login/>
+
+</Route>
+
+</Switch>
+
+на сервере начинает работать переход на логин страничку
+
+13. подключаем products так же
+работают оба перехода
+
+14. редактируем AsideMenu.css для красоты
+
+15. $ npm install node-sass --save в корне , где package.json
+это подключает SASS
+добавляем ещё один файлик стилей - AsideMenu.scss
+
+16. дальше добавляем еще папочку ProductsPage, и в App.js
+</Route>
+        <Route path='/products/:id'>
+            <ProductsPage/>
+        </Route>
+

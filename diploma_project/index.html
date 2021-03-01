@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Shopno landing page</title>
+    <link rel="icon" href="images/favicon.ico"><!--добавление иконки на закладку страницы-->
+    <link rel="stylesheet" href="css/hystmodal.min.css"><!--модальные окна от автора hystModal-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet"><!--подключение шрифта Montserrat 600-->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap" rel="stylesheet"><!--подключение шрифта Montserrat 800-->
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet"><!--подключение Font Awesome для кнопок с иконками соцсетей в footer-->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+        <!--секция для модального окна начало, может быть в любом месте-->
+        <div class="hystmodal" id="ModalWindow01" aria-hidden="true">
+        <div class="hystmodal__wrap">
+            <div class="hystmodal__window" role="dialog" aria-modal="true">
+                <button data-hystclose class="hystmodal__close">Закрыть</button>
+                <!--далее до закрывающего div - любое содержимое для модального окна-->
+                <div class="modal-window01-content">
+                    <p>Задание: создать landing page по макету, созданному в Adobe Photoshop.</p>
+                    <a href="Shopno%20one%20page.psd" download>Скачать .psd файл</a>
+                </div>
+            </div>
+        </div>
+        </div>
+        <!--секция для модального окна конец-->
+
+    <div class="topmenu">
+        <div class="task-description" data-hystmodal="#ModalWindow01">
+            <a href="">(нажмите для просмотра описания задания)</a>
+        </div><!--эту секцию можно убрать чтобы не нарушать сходство с макетом-->
+        <div class="container">
+            <img class="shopno_logo" src="images/shopno_logo.png" alt="shopno_logo">
+            <div class="burger-menu"><!--бургер-меню-->
+                <button id="trigger" class="trigger">
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                </button>
+                <ul id="menu_items" class="menu">
+                    <li><a href="#say_hello" onclick="BurgerMenuItemClicked()">Back to top</a></li>
+                    <li><a href="#about_us" onclick="BurgerMenuItemClicked()">About us</a></li>
+                    <li><a href="#featured_works" onclick="BurgerMenuItemClicked()">Featured works</a></li>
+                    <li><a href="#our_services" onclick="BurgerMenuItemClicked()">Our services</a></li>
+                    <li><a href="#small_team" onclick="BurgerMenuItemClicked()">Small team</a></li>
+                    <li><a href="#what_they_says" onclick="BurgerMenuItemClicked()">What they says</a></li>
+                    <li><a href="#contact_us" onclick="BurgerMenuItemClicked()">Contact us</a></li>
+                </ul>
+            </div><!--бургер-меню-->
+        </div>
+    </div><!--конец секции верхнего закреплённого меню высотой 112px-->
+    
+    <div class="say_hello" id="say_hello"><!--высота по макету - 806px-->
+        <div class="container">
+            <p class="say_hello__firstp">SAY HELLO TO <span class="say_hello--with_bg">SHOPNO!</span></p>
+            <p><span class="say_hello--with_bg">AGENCY</span> CORPORATE SHOPNO THEME</p>
+            <button class="contact_us_button" onclick="ContactUs_Btn_Click()">CONTACT US</button>
+            <img class="say_hello__glass" src="images/blue_glass.png" alt="">
+        </div>
+    </div>
+    
+    <div class="featured_works" id="featured_works">
+        <div class="container">
+            <h3>FEATURED WORKS</h3>
+            <h5>LOREM IPSUM DOLOR SIT AMET EVENT LANDING TEMPLATE</h5>
+            <div class="featured_works__images">
+                <img class="featured_works__img" src="images/featured_works__image01.jpg" alt="image01">
+                <img class="featured_works__img" src="images/featured_works__image02.jpg" alt="image02">
+                <img class="featured_works__img" src="images/featured_works__image03.jpg" alt="image03">
+                <img class="featured_works__img" src="images/featured_works__image04.jpg" alt="image04">
+                <img class="featured_works__img" src="images/featured_works__image05.jpg" alt="image05">
+                <img class="featured_works__img" src="images/featured_works__image06.jpg" alt="image06">
+            </div>
+        </div>
+    </div>
+    
+    <footer><!--высота по макету - 312px-->
+        <div class="container">
+            <h6>FOLLOW US</h6>
+            <div>
+                <button><i class="fab fa-pinterest-p"></i></button>
+                <button><i class="fab fa-twitter"></i></button>
+                <button><i class="fab fa-facebook-f"></i></button>
+                <button><i class="fab fa-dribbble"></i></button>
+            </div>
+            <span>Copyright Masum Parvej, All Rights Reserved</span>
+        </div>
+    </footer>
+    
+    <script src="js/hystmodal.min.js"></script><!--модальные окна от автора hystModal-->
+    <script src="js/script.js"></script>
+</body>
+
+</html>

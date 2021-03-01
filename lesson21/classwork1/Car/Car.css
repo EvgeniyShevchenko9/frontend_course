@@ -1,0 +1,12 @@
+.auto__item{
+	flex: 0 0 23%;
+	margin: 15px 1%;
+	padding: 15px;
+	background-color: aqua;
+	text-align: center;
+}
+
+.autos{
+	display: flex;
+	flex-wrap: wrap;
+}

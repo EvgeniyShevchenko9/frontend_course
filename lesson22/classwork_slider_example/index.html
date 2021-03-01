@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<button data-show="true" class="show">Test</button>
+
+	<div class="menu">
+		<span class="menu-button">Head</span>
+		<ul class="menu-drop">
+			<li>Test</li>
+			<li>Test</li>
+			<li>Test</li>
+			<li>Test</li>
+			<li>Test</li>
+			<li>Test</li>
+		</ul>
+	</div>
+
+	<span data-id='1'>Test 1</span>
+	<span data-id='1'>Test 1</span>
+	<span data-id='1'>Test 1</span>
+	<span data-id='1'>Test 1</span>
+	<span data-id='1'>Test 1</span>
+	<span data-id='1'>Test 1</span>
+	<span data-id='1'>Test 1</span>
+	<span data-id='1'>Test 1</span>
+	<span data-id='1'>Test 1</span>
+	<span data-id='1'>Test 1</span>
+	
+	<div class="slider">
+		<div class="slider__item" style="background-image: url(back.jpg)"></div>
+		<div class="slider__item" style="background-image: url(https://i.pinimg.com/originals/af/8d/63/af8d63a477078732b79ff9d9fc60873f.jpg)"></div>
+		<div class="slider__item" style="background-image: url(back.jpg)"></div>
+		<div class="slider__item" style="background-image: url(back.jpg)"></div>
+		<div class="slider__item" style="background-image: url(https://i.pinimg.com/originals/af/8d/63/af8d63a477078732b79ff9d9fc60873f.jpg)"></div>
+		<div class="slider__item" style="background-image: url(back.jpg)"></div>
+		<div class="slider__item" style="background-image: url(back.jpg)"></div>
+		<div class="slider__item" style="background-image: url(back.jpg)"></div>
+		<div class="slider__item" style="background-image: url(back.jpg)"></div>
+		<div class="slider__item" style="background-image: url(back.jpg)"></div>
+		<div class="slider__item" style="background-image: url(back.jpg)"></div>
+		
+	</div>
+	
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+	<script src="script.js"></script>
+	<script>
+		$('.slider').slick({
+			slidesToShow: 2,
+  		slidesToScroll: 2,
+			dots: true
+		});
+	</script>
+</body>
+</html>

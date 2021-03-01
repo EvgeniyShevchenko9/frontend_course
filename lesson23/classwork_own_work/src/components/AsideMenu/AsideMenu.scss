@@ -1,0 +1,19 @@
+.AsideMenu {
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	width: 200px;
+	background-color: grey;
+
+	li {
+	border-bottom: 1px solid yellow;
+	}
+
+	a {
+	display: block;
+	color: white;
+	padding: 10px;
+	text-decoration: none;
+	}
+}
