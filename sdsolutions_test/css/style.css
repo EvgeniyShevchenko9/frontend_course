@@ -1,0 +1,124 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: "Montserrat", sans-serif;
+}/*первичный сброс настроек браузера*/
+
+
+.modal-window01-content {
+    display: block;
+    text-align: center;
+    background-color: #ccffcc;
+    padding: 10px;
+    margin: 5px;
+    border: 3px outset darkgray;
+    border-radius: 5px;
+}
+
+.container {
+    margin: 5px;
+}
+
+h3 {
+    margin-bottom: 5px;
+}
+
+.field_description {
+    color: gray;
+    font-size: 11px;
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+
+.fieldswidth {
+    width: 90%;
+    border: 1px solid lightgray;
+}
+
+.listdisplayarea {
+    padding: 2px;
+    min-height: 40px;
+}
+
+.userbuttons {
+    background-color: #e3e5e8;
+    color: #505050;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border: 1px solid #777879;
+    border-radius: 5px;
+    width: 100px;
+}
+
+.userbuttons:hover {
+    background-color: #b2f2ee;
+}
+
+.addbutton {
+    margin: 5px 0;
+}
+
+.burger-menu {
+    display: block;
+}
+
+/*вёрстка mobile-first
+на три варианта ширины экрана - по порядку:
+1..479 - основная часть этого css
+480..767 - часть после @media (min-width:480px)
+768 и более - часть после @media (min-width:768px)*/
+
+.menu { display: none; list-style: none;}/*меню справа при ширине окна браузера менее 768 не отображается, а будет выпадать из бургер-кнопки*/
+
+.trigger {
+    display: inline-block;
+    background-color: transparent;/*заменяем стандартный серый цвет фона кнопки бургер-меню для красоты на прозрачный*/
+    border: none;
+    cursor: pointer;
+    position: fixed;
+    top: 5px;
+    right: 10px;
+}
+
+.trigger i {/*отрисовка самой кнопки бургер-меню*/
+    display: block;
+    width: 30px;
+    height: 6px;
+    margin: 4px auto;
+    background: #222;
+}
+
+.trigger:focus {
+    outline: 1px solid lightgray;
+}
+
+.show {/*вспомогательный класс для показа/скрытия кнопок бургер-меню*/
+    display: block;
+    height: 0px;
+    position: fixed;
+    top: 44px;
+    right: 10px;
+}
+
+
+@media (min-width:480px) {/*начало секции --ширина 480 и до 767--*/
+
+
+
+}/*конец секции --ширина 480 и до 767--*/
+
+
+@media (min-width:768px) {/*начало секции --ширина 768 и больше--*/
+
+.trigger { display: none; }/*кнопка бургер-меню при ширине окна браузера 768 и более не отображается*/
+
+.menu {/*зато постоянно отображаются кнопки меню справа*/
+    display: flex;
+    align-items: center;
+    height: 48px;
+}
+
+}/*конец секции --ширина 768 и больше--*/

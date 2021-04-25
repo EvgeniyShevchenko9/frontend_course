@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SDsolutions TEST - Evgeniy Shevchenko</title>
+    <link rel="icon" href="images/favicon.ico"><!--добавление своей иконки на закладку страницы-->
+    <link rel="stylesheet" href="css/hystmodal.min.css"><!--модальные окна от автора hystModal-->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!--секция для модального окна ModalWindow01 -- начало; секция может быть в любом месте внутри body-->
+    <div class="hystmodal" id="ModalWindow01" aria-hidden="true">
+    <div class="hystmodal__wrap">
+        <div class="hystmodal__window" role="dialog" aria-modal="true">
+            <button data-hystclose class="hystmodal__close">Close</button>
+            <!--далее до закрывающего div - любое содержимое для модального окна-->
+            <div class="modal-window01-content">
+                <p>Your list in XML format:</p>
+                <p>test</p>
+                <p>test</p>
+                <p>test</p>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!--секция для модального окна ModalWindow01 -- конец-->
+
+    <div class="container">
+
+        <h3>Test</h3>
+        <label>
+            <p class="field_description">Name/Value Pair</p>
+            <input class="fieldswidth" type="text" id="user_input" placeholder="Name=Value">
+        </label>
+        <button class="userbuttons addbutton" id="button_add">Add</button>
+        <p class="field_description">Name/Value Pair List</p>
+        <div class="listdisplayarea fieldswidth" id="displayarea">
+            <!--именно в этот div JS через innerHTML будет заносить пары, введённые пользователем-->
+        </div>
+        
+        <div class="burger-menu">
+            <button class="trigger" id="trigger"><!--сама кнопка-бургер-->
+                <i></i>
+                <i></i>
+                <i></i>
+            </button>
+            <ul class="menu" id="menu_items">
+                <li><button class="userbuttons" id="button_sortbyname">Sort by Name</button></li>
+                <li><button class="userbuttons" id="button_sortbyvalue">Sort by Value</button></li>
+                <li><button class="userbuttons" id="button_clearlist">Clear list</button></li>
+                <li data-hystmodal="#ModalWindow01"><button class="userbuttons" id="button_showasXML">Show as XML</button></li>
+            </ul>
+        </div><!--конец описания бургер-меню-->
+
+    </div><!--конец контейнера-->
+
+    <script src="js/hystmodal.min.js"></script><!--модальные окна от автора hystModal-->
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
