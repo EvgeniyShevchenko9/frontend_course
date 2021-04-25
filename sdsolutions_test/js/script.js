@@ -88,9 +88,8 @@ function AddButtonClicked() {
 /*при нажатии на кнопку (trigger) вызова содержимого бургер-меню*/
 function OpenBurgerMenu() {
     alert("Button trigger clicked");
-    let elem = document.getElementById("menu_items");
-    if ( elem.classList.contains("show") ) { elem.classList.remove("show"); }
-    else { elem.classList.add("show"); };
+    if ( document.getElementById("menu_items").classList.contains("show") ) { document.getElementById("menu_items").classList.remove("show"); }
+    else { document.getElementById("menu_items").classList.add("show"); };
     /*классом show показываем/убираем содержимое бургера; изначально содержимое бургер-меню скрыто*/
 }
 

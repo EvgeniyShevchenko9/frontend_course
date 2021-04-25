@@ -96,7 +96,7 @@ h2 {
 
 .trigger {
     display: inline-block;
-    background-color: yellow;/*заменяем стандартный серый цвет фона кнопки бургер-меню для красоты на прозрачный*/
+    background-color: lightgreen;/*заменяем стандартный серый цвет фона кнопки бургер-меню для красоты на прозрачный*/
     border: none;
     cursor: pointer;
     position: fixed;
