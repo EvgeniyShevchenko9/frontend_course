@@ -87,6 +87,7 @@ function AddButtonClicked() {
 
 /*при нажатии на кнопку (trigger) вызова содержимого бургер-меню*/
 function OpenBurgerMenu() {
+    alert("Button trigger clicked");
     let elem = document.getElementById("menu_items");
     if ( elem.classList.contains("show") ) { elem.classList.remove("show"); }
     else { elem.classList.add("show"); };
