@@ -18,7 +18,7 @@ button_showasXML.addEventListener("keydown", event => {
 /*при переборе элементов управления клавиатурой, т.е. клавишей Tab, при уходе с последнего пункта меню этой клавишей (её KeyCode - 9) - также попытаться закрыть бургер-меню (меню закроется если оно показано классом show, т.е используется мобильная версия)*/
 
 window.onclick = WindowClick;
-
+window.onresize = TryToCloseBurgerMenu;
 window.onload = DisplayArr;
 
 /*описания констант, переменных, функций*/
@@ -91,19 +91,19 @@ function AddButtonClicked() {
 function ToggleBurgerMenu() {
     let elem = document.getElementById("menu_items");
     if ( !(elem.classList.contains("showburgerbuttons")) ) { elem.classList.add("showburgerbuttons"); BurgerJustOpened = true; }
-    else { elem.classList.remove("showburgerbuttons"); BurgerJustOpened = false; };
+    else { elem.classList.remove("showburgerbuttons"); };
     /*классом showburgerbuttons показываем/убираем содержимое бургера; изначально класса showburgerbuttons у menu_items нет*/
 }
 
 function TryToCloseBurgerMenu() {
     let elem = document.getElementById("menu_items");
     if ( elem.classList.contains("showburgerbuttons") ) { elem.classList.remove("showburgerbuttons"); };
-/*    при клике на пункт меню: если пункт показан классом showburgerbuttons (то есть страница отображается в мобильной версии), тогда скрыть все кнопки меню; при просмотре страницы на десктопе - класса showburgerbuttons у меню нет, при клике на кнопки меню их скрывать не нужно*/
+/*при попытке спрятать кнопки бургер-меню: если кнопки показаны классом showburgerbuttons (то есть страница отображается в мобильной версии), тогда скрыть все кнопки меню; при просмотре страницы на десктопе - класса showburgerbuttons у меню нет, при клике на кнопки меню скрывать их не нужно*/
 }
 
-function WindowClick() {
-    if (!(BurgerJustOpened)) { TryToCloseBurgerMenu(); BurgerJustOpened = false; } else { BurgerJustOpened = false; };
-}
+function WindowClick() {/*при любом клике на странице включая и клик по триггеру*/
+    if (BurgerJustOpened) { BurgerJustOpened = false; } else { TryToCloseBurgerMenu(); BurgerJustOpened = false; };
+}/*кнопки бургер-меню не прячутся при любом клике только если это был клик по триггеру бургер-меню*/
 
 function ClearListButtonClicked() {
     arr = [];

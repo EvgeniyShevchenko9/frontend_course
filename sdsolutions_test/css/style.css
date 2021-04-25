@@ -28,6 +28,7 @@ h2 {
 .addsection {
     display: flex;
     flex-direction: column;
+    padding-top: 5px;
 }
 
 .field_description {
@@ -69,6 +70,7 @@ h2 {
 .displaysection {
     display: flex;
     flex-direction: row;
+    padding-top: 5px;
 }
 
 .displaysectionleft {
@@ -133,8 +135,7 @@ h2 {
         flex-direction: row;
         background-color: #eef2f7;
         max-width: 700px;
-        border-radius: 4px 8px 8px 0;
-        padding-top: 5px;
+        border-radius: 6px 6px 6px 6px;
     }
     
     .addsectionleft {
@@ -147,7 +148,7 @@ h2 {
     }
     
     .addbutton {
-        margin: 18px 10px 8px 20px;
+        margin: 20px 10px 8px 20px;
         flex-shrink: 0;
     }
     
