@@ -30,31 +30,45 @@
 
     <div class="container">
 
-        <h3>Test</h3>
-        <label>
-            <p class="field_description">Name/Value Pair</p>
-            <input class="fieldswidth" type="text" id="user_input" placeholder="Name=Value">
-        </label>
-        <button class="userbuttons addbutton" id="button_add">Add</button>
-        <p class="field_description">Name/Value Pair List</p>
-        <div class="listdisplayarea fieldswidth" id="displayarea">
-            <!--именно в этот div JS через innerHTML будет заносить пары, введённые пользователем-->
+        <h2>Test</h2>
+        
+        <div class="addsection">
+            
+            <label>
+                <p class="field_description">Name/Value Pair</p>
+                <input class="fields userinput" type="text" id="user_input" placeholder="Name=Value">
+            </label>
+            <button class="userbuttons addbutton" id="button_add">Add</button>
+            
         </div>
         
-        <div class="burger-menu">
-            <button class="trigger" id="trigger"><!--сама кнопка-бургер-->
-                <i></i>
-                <i></i>
-                <i></i>
-            </button>
-            <ul class="menu" id="menu_items">
-                <li><button class="userbuttons" id="button_sortbyname">Sort by Name</button></li>
-                <li><button class="userbuttons" id="button_sortbyvalue">Sort by Value</button></li>
-                <li><button class="userbuttons" id="button_clearlist">Clear list</button></li>
-                <li data-hystmodal="#ModalWindow01"><button class="userbuttons" id="button_showasXML">Show as XML</button></li>
-            </ul>
-        </div><!--конец описания бургер-меню-->
-
+        <div class="displaysection">
+            
+            <div class="displaysectionleft">
+            
+                <p class="field_description">Name/Value Pair List</p>
+                <div class="fields listdisplayarea" id="displayarea">
+                    <!--именно в этот div JS через innerHTML будет заносить пары, введённые пользователем-->
+                </div>
+                
+            </div>
+            
+            <div class="burger-menu">
+                <button class="trigger" id="trigger"><!--сама кнопка-бургер-->
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                </button>
+                <ul class="menu" id="menu_items">
+                    <li><button class="userbuttons" id="button_sortbyname">Sort by Name</button></li>
+                    <li><button class="userbuttons" id="button_sortbyvalue">Sort by Value</button></li>
+                    <li><button class="userbuttons" id="button_clearlist">Clear list</button></li>
+                    <li data-hystmodal="#ModalWindow01"><button class="userbuttons" id="button_showasXML">Show as XML</button></li>
+                </ul>
+            </div><!--конец описания бургер-меню-->
+            
+        </div>
+        
     </div><!--конец контейнера-->
 
     <script src="js/hystmodal.min.js"></script><!--модальные окна от автора hystModal-->

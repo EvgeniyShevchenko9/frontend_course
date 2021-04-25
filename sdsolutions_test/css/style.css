@@ -6,7 +6,6 @@
     font-family: "Montserrat", sans-serif;
 }/*первичный сброс настроек браузера*/
 
-
 .modal-window01-content {
     display: block;
     text-align: center;
@@ -18,47 +17,64 @@
 }
 
 .container {
-    margin: 5px;
+    margin: 10px;
 }
 
-h3 {
+h2 {
     margin-bottom: 5px;
+}
+
+.addsection {
+    display: flex;
+    flex-direction: column;
 }
 
 .field_description {
     color: gray;
-    font-size: 11px;
+    font-size: 18px;
     font-weight: 600;
-    margin-bottom: 2px;
 }
 
-.fieldswidth {
-    width: 90%;
+.fields {
     border: 1px solid lightgray;
+    font-size: 16px;
+    padding: 2px;
+    word-wrap: break-word;/*для слишком длинных пар*/
 }
 
-.listdisplayarea {
-    padding: 2px;
-    min-height: 40px;
+.userinput {
+    min-height: 24px;
+    width: 65%;
 }
 
 .userbuttons {
     background-color: #e3e5e8;
     color: #505050;
-    font-size: 12px;
+    font-size: 18px;
     font-weight: 600;
     padding: 2px 8px;
     border: 1px solid #777879;
     border-radius: 5px;
-    width: 100px;
-}
-
-.userbuttons:hover {
-    background-color: #b2f2ee;
+    width: 150px;
 }
 
 .addbutton {
     margin: 5px 0;
+}
+
+.displaysection {
+    display: flex;
+    flex-direction: row;
+}
+
+.displaysectionleft {
+    display: flex;
+    flex-direction: column;
+    width: 65%;
+}
+
+.listdisplayarea {
+    min-height: 40px;
 }
 
 .burger-menu {
