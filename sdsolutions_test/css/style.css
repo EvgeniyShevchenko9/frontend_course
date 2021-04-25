@@ -79,7 +79,7 @@ h2 {
 }
 
 .listdisplayarea {
-    min-height: 40px;
+    min-height: 160px;
 }
 
 .burger-menu {
@@ -118,7 +118,7 @@ h2 {
 
 .show {/*вспомогательный класс для показа/скрытия кнопок бургер-меню*/
     display: block;
-    height: 1px;
+    height: 144px;
     position: fixed;
     top: 60px;
     right: 10px;
@@ -134,7 +134,7 @@ h2 {
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin: 22px 10px 0 20px;
+        margin: 28px 10px 0 20px;
     }
     
     .displaysectionleft {
