@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
+    text-align: left;
     font-family: "Montserrat", sans-serif;
 }/*первичный сброс настроек браузера*/
 
@@ -44,23 +45,25 @@ h2 {
 
 .userinput {
     min-height: 24px;
-    width: 65%;
+    width: 60%;
 }
 
 .userbuttons {
     background-color: #e3e5e8;
     color: #505050;
+    text-align: center;
     font-size: 18px;
     font-weight: 600;
     padding: 2px 8px;
     border: 1px solid #777879;
     border-radius: 5px;
-    width: 150px;
+    width: 140px;
     height: 38px;
     margin: 1px 0;
 }
 
 .addbutton {
+    width: 160px;
     margin: 5px 0;
 }
 
@@ -72,7 +75,7 @@ h2 {
 .displaysectionleft {
     display: flex;
     flex-direction: column;
-    width: 65%;
+    width: 80%;
 }
 
 .listdisplayarea {
@@ -122,21 +125,44 @@ h2 {
 }
 
 
+/*ADAPTIVE*/
 @media (min-width:480px) {/*начало секции --ширина 480 и до 767--*/
 
+    .trigger { display: none; }/*кнопка бургер-меню при ширине окна браузера 480 и более не отображается*/
 
+    .menu {/*зато постоянно отображаются кнопки меню справа*/
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 20px 0 0 10px;
+    }
+    
+    .displaysectionleft {
+        max-width: 540px;
+    }
 
 }/*конец секции --ширина 480 и до 767--*/
 
 
+/*ADAPTIVE*/
 @media (min-width:768px) {/*начало секции --ширина 768 и больше--*/
 
-.trigger { display: none; }/*кнопка бургер-меню при ширине окна браузера 768 и более не отображается*/
-
-.menu {/*зато постоянно отображаются кнопки меню справа*/
-    display: flex;
-    align-items: center;
-    height: 48px;
-}
+    body {
+        background-color: #5c87b2;
+    }
+    
+    .container {
+        background-color: #ffffff;
+        width: 728px;
+        margin: 60px auto 30px;
+        padding: 20px;
+        padding-right: 35px;
+    }
+    
+    .listdisplayarea {
+        width: 500px;
+        height: 464px;
+        overflow: auto;
+    }
 
 }/*конец секции --ширина 768 и больше--*/
