@@ -63,7 +63,6 @@ h2 {
 }
 
 .addbutton {
-    width: 140px;
     margin: 5px 0;
 }
 
@@ -129,20 +128,41 @@ h2 {
 
 /*ADAPTIVE*/
 @media (min-width:480px) {/*начало секции --ширина 480 и до 767--*/
-
-    .trigger { display: none; }/*кнопка бургер-меню при ширине окна браузера 480 и более не отображается*/
-
-    .menu {/*зато постоянно отображаются кнопки меню справа*/
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin: 28px 10px 0 20px;
+    
+    .addsection {
+        flex-direction: row;
+        background-color: #eef2f7;
+        max-width: 700px;
+        border-radius: 4px 8px 8px 0;
+        padding-top: 5px;
+    }
+    
+    .addsectionleft {
+        width: 80%;
+        max-width: 540px;
+    }
+    
+    .userinput {
+        width: 100%;
+    }
+    
+    .addbutton {
+        margin: 18px 10px 8px 20px;
+        flex-shrink: 0;
     }
     
     .displaysectionleft {
         max-width: 540px;
     }
-
+    
+    .trigger { display: none; }/*кнопка бургер-меню при ширине окна браузера 480 и более не отображается*/
+    
+    .menu {/*зато постоянно отображаются кнопки меню справа*/
+        display: flex;
+        flex-direction: column;
+        margin: 28px 10px 0 20px;
+    }
+    
 }/*конец секции --ширина 480 и до 767--*/
 
 
@@ -159,6 +179,10 @@ h2 {
         margin: 60px auto 30px;
         padding: 20px;
         padding-right: 35px;
+    }
+    
+    .userinput {
+        width: 500px;
     }
     
     .listdisplayarea {

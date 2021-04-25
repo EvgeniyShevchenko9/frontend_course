@@ -6,7 +6,7 @@ const ModalWindow01 = new HystModal({
 
 /*настройки событий на элементы управления приложением*/
 button_add.addEventListener("click", AddButtonClicked);
-trigger.addEventListener("click", OpenBurgerMenu);
+trigger.addEventListener("click", ToggleBurgerMenu);
 button_sortbyname.addEventListener("click", TryToCloseBurgerMenu);
 button_sortbyvalue.addEventListener("click", TryToCloseBurgerMenu);
 button_clearlist.addEventListener("click", ClearListButtonClicked);
@@ -17,11 +17,13 @@ button_showasXML.addEventListener("keydown", event => {
     if (event.keyCode === 9) { TryToCloseBurgerMenu(); }; });
 /*при переборе элементов управления клавиатурой, т.е. клавишей Tab, при уходе с последнего пункта меню этой клавишей (её KeyCode - 9) - также попытаться закрыть бургер-меню (меню закроется если оно показано классом show, т.е используется мобильная версия)*/
 
-/*window.onclick = CheckWhereIsFocus;проверка необходимости закрыть бургер-меню при клике где-либо в окне браузера*/
+window.onclick = WindowClick;
+
 window.onload = DisplayArr;
 
 /*описания констант, переменных, функций*/
 let arr = [];/*основной массив, в котором хранятся все пары, введённые пользователем*/
+let BurgerJustOpened = false;
 
 arr = [{Name : "alpha", Value: "beta"}, {Name : "aaa", Value: "bbb"}, {Name : "AAA", Value: "BBB"}, {Name : "alpha", Value: "beta"}, {Name : "aaa", Value: "bbb"}, {Name : "AAA", Value: "BBB"}];/*готовый массив для тестирования*/
 
@@ -86,10 +88,10 @@ function AddButtonClicked() {
 }/*конец функции AddButtonClicked*/
 
 /*при нажатии на кнопку (trigger) вызова содержимого бургер-меню*/
-function OpenBurgerMenu() {
+function ToggleBurgerMenu() {
     let elem = document.getElementById("menu_items");
-    if ( elem.classList.contains("showburgerbuttons") ) { elem.classList.remove("showburgerbuttons"); }
-    else { elem.classList.add("showburgerbuttons"); };
+    if ( !(elem.classList.contains("showburgerbuttons")) ) { elem.classList.add("showburgerbuttons"); BurgerJustOpened = true; }
+    else { elem.classList.remove("showburgerbuttons"); BurgerJustOpened = false; };
     /*классом showburgerbuttons показываем/убираем содержимое бургера; изначально класса showburgerbuttons у menu_items нет*/
 }
 
@@ -99,9 +101,8 @@ function TryToCloseBurgerMenu() {
 /*    при клике на пункт меню: если пункт показан классом showburgerbuttons (то есть страница отображается в мобильной версии), тогда скрыть все кнопки меню; при просмотре страницы на десктопе - класса showburgerbuttons у меню нет, при клике на кнопки меню их скрывать не нужно*/
 }
 
-function CheckWhereIsFocus() {/*если фокус куда-либо уходит с бургер-меню, - то закрыть меню*/
-    let FocusedElement = document.activeElement;
-    if (!( document.getElementById("trigger") === FocusedElement || document.getElementById("button_sortbyname") === FocusedElement || document.getElementById("button_sortbyvalue") === FocusedElement || document.getElementById("button_clearlist") === FocusedElement || document.getElementById("button_showasXML") === FocusedElement )) { TryToCloseBurgerMenu(); }
+function WindowClick() {
+    if (!(BurgerJustOpened)) { TryToCloseBurgerMenu(); BurgerJustOpened = false; } else { BurgerJustOpened = false; };
 }
 
 function ClearListButtonClicked() {
