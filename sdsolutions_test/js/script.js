@@ -82,20 +82,21 @@ function AddButtonClicked() {
     /*все проверки пройдены, добавляем пару как объект в массив arr, в начало*/
     arr.unshift({Name : inputName, Value: inputValue});
     DisplayArr();
-    document.getElementById("user_input").focus();
 
 }/*конец функции AddButtonClicked*/
 
 /*при нажатии на кнопку (trigger) вызова содержимого бургер-меню*/
 function OpenBurgerMenu() {
-    document.getElementById("menu_items").classList.toggle("show");
+    let elem = document.getElementById("menu_items");
+    if ( elem.classList.contains("show") ) { elem.classList.remove("show"); }
+    else { elem.classList.add("show"); };
     /*классом show показываем/убираем содержимое бургера; изначально содержимое бургер-меню скрыто*/
 }
 
 function TryToCloseBurgerMenu() {
     let elem = document.getElementById("menu_items");
-    if ( elem.classList.contains("show") ) { elem.classList.toggle("show"); }
-/*    при клике на пункт меню: если пункт показан классом show (то есть страница отображается в мобильной версии), тогда скрыть всё меню; при просмотре страницы на десктопе - класс show не появляется, и при клике на кнопку меню - меню скрывать не нужно*/
+    if ( elem.classList.contains("show") ) { elem.classList.remove("show"); };
+/*    при клике на пункт меню: если пункт показан классом show (то есть страница отображается в мобильной версии), тогда скрыть всё меню; при просмотре страницы на десктопе - класс show не появляется, при клике на кнопку меню - меню скрывать не нужно, если класса show нет - то и добавлять его при клике по пункту меню не нужно*/
 }
 
 function CheckWhereIsFocus() {/*если фокус куда-либо уходит с бургер-меню, - то закрыть меню*/
