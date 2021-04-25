@@ -92,11 +92,11 @@ h2 {
 480..767 - часть после @media (min-width:480px)
 768 и более - часть после @media (min-width:768px)*/
 
-.menu { display: none; list-style: none;}/*меню справа при ширине окна браузера менее 768 не отображается, а будет выпадать из бургер-кнопки*/
+.menu { display: none; list-style: none; }/*меню справа при ширине окна браузера менее 768 не отображается, а будет выпадать из бургер-кнопки*/
 
 .trigger {
     display: inline-block;
-    background-color: lightgreen;/*заменяем стандартный серый цвет фона кнопки бургер-меню для красоты на прозрачный*/
+    background-color: transparent;/*заменяем стандартный серый цвет фона кнопки бургер-меню для красоты на прозрачный*/
     border: none;
     cursor: pointer;
     position: fixed;
@@ -118,7 +118,7 @@ h2 {
     outline: 1px solid lightgray;
 }
 
-.show {/*вспомогательный класс для показа/скрытия кнопок бургер-меню*/
+.showburgerbuttons {/*вспомогательный класс для показа/скрытия кнопок бургер-меню*/
     display: block;
     height: 144px;
     position: fixed;

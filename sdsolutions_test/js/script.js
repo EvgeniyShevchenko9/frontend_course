@@ -17,7 +17,7 @@ button_showasXML.addEventListener("keydown", event => {
     if (event.keyCode === 9) { TryToCloseBurgerMenu(); }; });
 /*при переборе элементов управления клавиатурой, т.е. клавишей Tab, при уходе с последнего пункта меню этой клавишей (её KeyCode - 9) - также попытаться закрыть бургер-меню (меню закроется если оно показано классом show, т.е используется мобильная версия)*/
 
-window.onclick = CheckWhereIsFocus;/*проверка необходимости закрыть бургер-меню при клике где-либо в окне браузера*/
+/*window.onclick = CheckWhereIsFocus;проверка необходимости закрыть бургер-меню при клике где-либо в окне браузера*/
 window.onload = DisplayArr;
 
 /*описания констант, переменных, функций*/
@@ -87,16 +87,16 @@ function AddButtonClicked() {
 
 /*при нажатии на кнопку (trigger) вызова содержимого бургер-меню*/
 function OpenBurgerMenu() {
-    alert("Button trigger clicked");
-    if ( document.getElementById("menu_items").classList.contains("show") ) { document.getElementById("menu_items").classList.remove("show"); }
-    else { document.getElementById("menu_items").classList.add("show"); };
-    /*классом show показываем/убираем содержимое бургера; изначально содержимое бургер-меню скрыто*/
+    let elem = document.getElementById("menu_items");
+    if ( elem.classList.contains("showburgerbuttons") ) { elem.classList.remove("showburgerbuttons"); }
+    else { elem.classList.add("showburgerbuttons"); };
+    /*классом showburgerbuttons показываем/убираем содержимое бургера; изначально класса showburgerbuttons у menu_items нет*/
 }
 
 function TryToCloseBurgerMenu() {
     let elem = document.getElementById("menu_items");
-    if ( elem.classList.contains("show") ) { elem.classList.remove("show"); };
-/*    при клике на пункт меню: если пункт показан классом show (то есть страница отображается в мобильной версии), тогда скрыть всё меню; при просмотре страницы на десктопе - класс show не появляется, при клике на кнопку меню - меню скрывать не нужно, если класса show нет - то и добавлять его при клике по пункту меню не нужно*/
+    if ( elem.classList.contains("showburgerbuttons") ) { elem.classList.remove("showburgerbuttons"); };
+/*    при клике на пункт меню: если пункт показан классом showburgerbuttons (то есть страница отображается в мобильной версии), тогда скрыть все кнопки меню; при просмотре страницы на десктопе - класса showburgerbuttons у меню нет, при клике на кнопки меню их скрывать не нужно*/
 }
 
 function CheckWhereIsFocus() {/*если фокус куда-либо уходит с бургер-меню, - то закрыть меню*/
