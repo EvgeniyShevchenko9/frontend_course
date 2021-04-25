@@ -37,7 +37,7 @@ h2 {
 
 .fields {
     border: 1px solid lightgray;
-    font-size: 16px;
+    font-size: 20px;
     padding: 2px;
     word-wrap: break-word;/*для слишком длинных пар*/
 }
@@ -56,6 +56,8 @@ h2 {
     border: 1px solid #777879;
     border-radius: 5px;
     width: 150px;
+    height: 38px;
+    margin: 1px 0;
 }
 
 .addbutton {
@@ -101,9 +103,9 @@ h2 {
 
 .trigger i {/*отрисовка самой кнопки бургер-меню*/
     display: block;
-    width: 30px;
-    height: 6px;
-    margin: 4px auto;
+    width: 45px;
+    height: 8px;
+    margin: 6px auto;
     background: #222;
 }
 
@@ -115,7 +117,7 @@ h2 {
     display: block;
     height: 0px;
     position: fixed;
-    top: 44px;
+    top: 60px;
     right: 10px;
 }
 

@@ -79,8 +79,8 @@ function AddButtonClicked() {
         return;
     }
     
-    /*все проверки пройдены, добавляем пару как объект в массив arr*/
-    arr.push({Name : inputName, Value: inputValue});
+    /*все проверки пройдены, добавляем пару как объект в массив arr, в начало*/
+    arr.unshift({Name : inputName, Value: inputValue});
     DisplayArr();
     document.getElementById("user_input").focus();
 
