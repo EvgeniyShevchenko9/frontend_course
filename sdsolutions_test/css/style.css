@@ -52,18 +52,18 @@ h2 {
     background-color: #e3e5e8;
     color: #505050;
     text-align: center;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 600;
     padding: 2px 8px;
     border: 1px solid #777879;
     border-radius: 5px;
-    width: 140px;
-    height: 38px;
+    width: 132px;
+    height: 34px;
     margin: 1px 0;
 }
 
 .addbutton {
-    width: 160px;
+    width: 140px;
     margin: 5px 0;
 }
 
@@ -118,7 +118,7 @@ h2 {
 
 .show {/*вспомогательный класс для показа/скрытия кнопок бургер-меню*/
     display: block;
-    height: 0px;
+    height: 1px;
     position: fixed;
     top: 60px;
     right: 10px;
@@ -134,7 +134,7 @@ h2 {
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin: 20px 0 0 10px;
+        margin: 22px 10px 0 20px;
     }
     
     .displaysectionleft {
