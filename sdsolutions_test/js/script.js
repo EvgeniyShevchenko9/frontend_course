@@ -7,10 +7,11 @@ const ModalWindow01 = new HystModal({
 /*настройки событий на элементы управления приложением*/
 button_add.addEventListener("click", AddButtonClicked);
 trigger.addEventListener("click", ToggleBurgerMenu);
-button_sortbyname.addEventListener("click", TryToCloseBurgerMenu);
-button_sortbyvalue.addEventListener("click", TryToCloseBurgerMenu);
+button_sortbyname.addEventListener("click", SortByNameButtonClicked);
+button_sortbyvalue.addEventListener("click", SortByValueButtonClicked);
 button_clearlist.addEventListener("click", ClearListButtonClicked);
-button_showasXML.addEventListener("click", TryToCloseBurgerMenu);
+button_showasXML.addEventListener("click", ShowAsXMLButtonClicked);
+button_copytobuffer.addEventListener("click", CopyToBufferButtonClicked);
 
 /*дополнительный ивент для удобства пользования приложением:*/
 button_showasXML.addEventListener("keydown", event => {
@@ -25,7 +26,7 @@ window.onload = DisplayArr;
 let arr = [];/*основной массив, в котором хранятся все пары, введённые пользователем*/
 let BurgerJustOpened = false;
 
-arr = [{Name : "alpha", Value: "beta"}, {Name : "aaa", Value: "bbb"}, {Name : "AAA", Value: "BBB"}, {Name : "alpha", Value: "beta"}, {Name : "aaa", Value: "bbb"}, {Name : "AAA", Value: "BBB"}];/*готовый массив для тестирования*/
+arr = [{Name : "alpha", Value: "gamma"}, {Name : "aaa", Value: "bbb"}, {Name : "AAA", Value: "BBBBBB"}, {Name : "10", Value: "14"}, {Name : "2", Value: "000"}, {Name : "546abc", Value: "31415"}, {Name : "alpha", Value: "beta"}, {Name : "VeryVeryVeryLOOOOOOOOOOOOOOOOOOOOOOOOOOOOOONname", Value: "smallValue"}, {Name : "BIGPairNAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAME", Value: "00000000000000000000000000000000000000000000000000000000000000000000BIGGESTValue"}];/*готовый массив для тестирования*/
 
 function DisplayArr() {/*отображение текущего состояния массива arr в displayarea*/
     let areaHTML = "";
@@ -105,8 +106,61 @@ function WindowClick() {/*при любом клике на странице в�
     if (BurgerJustOpened) { BurgerJustOpened = false; } else { TryToCloseBurgerMenu(); BurgerJustOpened = false; };
 }/*кнопки бургер-меню не прячутся при любом клике только если это был клик по триггеру бургер-меню*/
 
+function SortByNameButtonClicked() {
+    arr.sort((a, b) => (a.Name > b.Name) ? 1 : ((b.Name > a.Name) ? -1 : 0));
+    DisplayArr();
+}
+
+function SortByValueButtonClicked() {
+    arr.sort((a, b) => (a.Value > b.Value) ? 1 : ((b.Value > a.Value) ? -1 : 0));
+    DisplayArr();
+}
+
 function ClearListButtonClicked() {
     arr = [];
-    TryToCloseBurgerMenu();
     DisplayArr();
+}
+
+function ShowAsXMLButtonClicked() {
+    let XMLresultHTML = "&lt" + "root" + "&gt" + "<br>";
+    for (let i = 0; i < arr.length; i++) {
+        XMLresultHTML += "&lt" + "Line" + "&gt" + arr[i].Name + "=" + arr[i].Value + "&lt" + "/Line" + "&gt" + "<br>";
+    };
+    XMLresultHTML += "&lt" + "/root" + "&gt";
+    document.getElementById("modal01_content").innerHTML = XMLresultHTML;
+}
+
+function CopyToBufferButtonClicked() {
+    
+    /*подготовка к отображению статуса копирования в буфер*/
+    document.getElementById("copy_status").textContent = "";
+    
+    let elem = document.getElementById("modal01_content");
+    elem.setAttribute("contenteditable", true);
+    elem.focus;
+    SelectElementText(elem);
+    try {
+        let res = document.execCommand('copy');        
+        if (res) { document.getElementById("copy_status").textContent = "Copied successfully."; };
+    }
+    catch (e) { document.getElementById("copy_status").textContent = "Failed to copy."; };
+    elem.setAttribute("contenteditable", false);
+    setTimeout(() => { document.getElementById("copy_status").textContent = ""; }, 1000);
+    /*очистка содержимого id=copy_status через 1 секунду*/
+}
+
+function SelectElementText(el, win) {
+    win = win || window;
+    let doc = win.document, sel, range;
+    if (win.getSelection && doc.createRange) {
+        sel = win.getSelection();
+        range = doc.createRange();
+        range.selectNodeContents(el);
+        sel.removeAllRanges();
+        sel.addRange(range);
+    } else if (doc.body.createTextRange) {
+        range = doc.body.createTextRange();
+        range.moveToElementText(el);
+        range.select();
+    }
 }

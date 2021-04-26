@@ -7,14 +7,31 @@
     font-family: "Montserrat", sans-serif;
 }/*первичный сброс настроек браузера*/
 
-.modal-window01-content {
+.copytobufferbutton {
+    display: block;
+    margin: 15px auto 5px;
+    padding: 5px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: copy;
+}
+
+.copystatus {
     display: block;
     text-align: center;
-    background-color: #ccffcc;
+    font-size: 12px;
+    min-height: 18px;
+}
+
+.modal-window01-content {
+    display: block;
     padding: 10px;
     margin: 5px;
-    border: 3px outset darkgray;
-    border-radius: 5px;
+    border: 1px outset lightgray;
+    overflow: auto;
+    word-wrap: break-word;
+    font-size: 14px;
+    color: navy;
 }
 
 .container {
@@ -76,7 +93,8 @@ h2 {
 .displaysectionleft {
     display: flex;
     flex-direction: column;
-    width: 80%;
+    flex-basis: 80%;
+    overflow: auto;
 }
 
 .listdisplayarea {
@@ -89,13 +107,13 @@ h2 {
 
 /*вёрстка mobile-first
 на три варианта ширины экрана - по порядку:
-1..479 - основная часть этого css
+1..479 - первая часть этого css
 480..767 - часть после @media (min-width:480px)
 768 и более - часть после @media (min-width:768px)*/
 
-.menu { display: none; list-style: none; }/*меню справа при ширине окна браузера менее 768 не отображается, а будет выпадать из бургер-кнопки*/
+.menu { display: none; list-style: none; }/*меню справа при ширине окна браузера менее 480 не отображается, а будет выпадать из бургер-кнопки*/
 
-.trigger {
+.trigger {/*бургер-кнопка*/
     display: inline-block;
     background-color: transparent;/*заменяем стандартный серый цвет фона кнопки бургер-меню для красоты на прозрачный*/
     border: none;
@@ -107,7 +125,7 @@ h2 {
     height: 50px;
 }
 
-.trigger i {/*отрисовка самой кнопки бургер-меню*/
+.trigger i {/*отрисовка самой бургер-кнопки полосками*/
     display: block;
     width: 45px;
     height: 8px;
@@ -115,7 +133,7 @@ h2 {
     background: #222;
 }
 
-.trigger:focus {
+.trigger:focus {/*на Mac и Iphone бесполезно т.к. кнопки даже при нажатии на них НЕ получают фокус; только для красоты на Android*/
     outline: 1px solid lightgray;
 }
 
@@ -139,12 +157,16 @@ h2 {
     }
     
     .addsectionleft {
-        width: 80%;
+        flex-basis: 80%;
         max-width: 540px;
     }
     
     .userinput {
         width: 100%;
+    }
+    
+    .userbuttons:hover {
+        cursor: pointer;
     }
     
     .addbutton {
@@ -171,7 +193,7 @@ h2 {
 @media (min-width:768px) {/*начало секции --ширина 768 и больше--*/
 
     body {
-        background-color: #5c87b2;
+        background-color: #5c87b2;/*цвет фона за основным контейнером*/
     }
     
     .container {
@@ -186,10 +208,13 @@ h2 {
         width: 500px;
     }
     
+    .userbuttons:hover {
+        background-color: #d5f1fa;
+    }
+    
     .listdisplayarea {
         width: 500px;
         height: 464px;
-        overflow: auto;
     }
 
 }/*конец секции --ширина 768 и больше--*/

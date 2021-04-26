@@ -10,24 +10,25 @@
 </head>
 
 <body>
-
+    
     <!--секция для модального окна ModalWindow01 -- начало; секция может быть в любом месте внутри body-->
     <div class="hystmodal" id="ModalWindow01" aria-hidden="true">
     <div class="hystmodal__wrap">
         <div class="hystmodal__window" role="dialog" aria-modal="true">
             <button data-hystclose class="hystmodal__close">Close</button>
             <!--далее до закрывающего div - любое содержимое для модального окна-->
-            <div class="modal-window01-content">
-                <p>Your list in XML format:</p>
-                <p>test</p>
-                <p>test</p>
-                <p>test</p>
+            <div>
+                <button class="copytobufferbutton" id="button_copytobuffer">Сopy everything to Сlipboard</button>
+                <span class="copystatus" id="copy_status"></span>
+            </div>
+            <div class="modal-window01-content" id="modal01_content">
+                <!--сюда будем выводить arr в формате XML-->
             </div>
         </div>
     </div>
     </div>
     <!--секция для модального окна ModalWindow01 -- конец-->
-
+    
     <div class="container">
 
         <h2>Test</h2>
@@ -73,10 +74,10 @@
         </div>
         
     </div><!--конец контейнера-->
-
+    
     <script src="js/hystmodal.min.js"></script><!--модальные окна от автора hystModal-->
     <script src="js/script.js"></script>
-
+    
 </body>
 
 </html>
